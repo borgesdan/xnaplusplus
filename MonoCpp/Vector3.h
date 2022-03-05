@@ -1,3 +1,6 @@
+#ifndef VECTOR3_H
+#define VECTOR3_H
+
 #include <iostream>
 
 namespace Xna{	
@@ -11,8 +14,8 @@ namespace Xna{
 		Vector3(double, double, double);
 		Vector3(double value);
 
-		Vector3 operator- ();
-		Vector3 operator+ ();
+		Vector3 operator- () const;
+		Vector3 operator+ () const;
 
 		friend std::ostream& operator<< (std::ostream& os, Vector3 const& vec);
 		friend Vector3 operator- (Vector3, Vector3);
@@ -42,3 +45,4 @@ namespace Xna{
 		double LengthSquared();
 	};
 }
+#endif

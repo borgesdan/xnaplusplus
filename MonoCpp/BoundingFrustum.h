@@ -3,9 +3,9 @@
 
 #include <vector>
 #include "Matrix.h"
-#include "Vector3.h"
 #include "ContainmentType.h"
 #include "PlaneIntersectionType.h"
+#include "Vector3.h"
 
 namespace Xna {
 
@@ -14,6 +14,7 @@ namespace Xna {
 	struct BoundingFrustum;
 	struct BoundingSphere;
 	struct Ray;
+	//struct Vector3;
 
 	struct BoundingFrustum {
 
@@ -40,13 +41,13 @@ namespace Xna {
 		ContainmentType Contains(BoundingFrustum frustum);
 		ContainmentType Contains(BoundingSphere sphere);
 		ContainmentType Contains(Vector3 point);
-		std::vector<Vector3> GetCorners();
+		std::vector<Vector3> GetCorners() const;
 		void GetCorners(std::vector<Vector3> corners);
 		bool Intersects(BoundingBox box);
 		bool Intersects(BoundingFrustum frustum);
 		bool Intersects(BoundingSphere sphere);
 		PlaneIntersectionType Intersects(Plane plane);
-		double Intersects(Ray ray)
+		double Intersects(Ray ray);
 
 		bool Equals(BoundingFrustum other);
 
@@ -59,7 +60,7 @@ namespace Xna {
 		void NormalizePlane(Plane& p);
 
 		void CreateCorners();
-		void CreatePlanes()
+		void CreatePlanes();
 	};
 }
 
