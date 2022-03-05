@@ -1,0 +1,5 @@
+namespace Xna {
+	struct Quaternion {
+
+	};
+}

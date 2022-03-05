@@ -1,0 +1,5 @@
+D:/VsProjects/C++/MonoCpp/out/build/x64-debug/CMakeFiles/edit_cache.dir
+D:/VsProjects/C++/MonoCpp/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+D:/VsProjects/C++/MonoCpp/out/build/x64-debug/MonoCpp/CMakeFiles/MonoGame.dir
+D:/VsProjects/C++/MonoCpp/out/build/x64-debug/MonoCpp/CMakeFiles/edit_cache.dir
+D:/VsProjects/C++/MonoCpp/out/build/x64-debug/MonoCpp/CMakeFiles/rebuild_cache.dir
