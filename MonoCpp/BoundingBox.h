@@ -46,32 +46,32 @@ namespace Xna {
 		static BoundingBox CreateMerged(BoundingBox const& original, BoundingBox const& additional);
 
 		// Check if this BoundingBox contains another BoundingBox.		
-		ContainmentType Contains(BoundingBox const& box);
+		ContainmentType Contains(BoundingBox const& box) const;
 		// Check if this BoundingBox contains a BoundingFrustum.
-		ContainmentType Contains(BoundingFrustum const& frustum);
+		ContainmentType Contains(BoundingFrustum const& frustum) const;
 		// Check if this BoundingBox contains a BoundingSphere.
-		ContainmentType Contains(BoundingSphere const& sphere);
+		ContainmentType Contains(BoundingSphere const& sphere) const;
 		// Check if this BoundingBox contains a Vector3.
-		ContainmentType Contains(Vector3 const& point);
+		ContainmentType Contains(Vector3 const& point) const;
 
 		// Get an array of Vector3 containing the corners of this BoundingBox.
-		std::vector<Vector3> GetCorners();
+		std::vector<Vector3> GetCorners() const;
 
 		// Fill the first 8 places of an array of Vector3"
 		// with the corners of this BoundingBox.
-		void GetCorners(std::vector<Vector3>& corners);
+		void GetCorners(std::vector<Vector3>& corners) const;
 
 		// Check if this BoundingBox intersects another BoundingBox.
-		bool Intersects(BoundingBox const& box);
+		bool Intersects(BoundingBox const& box) const;
 
 		// Check if this BoundingBox intersects a BoundingFrustum.
-		bool Intersects(BoundingFrustum const& frustum);
+		bool Intersects(BoundingFrustum const& frustum) const;
 
 		// Check if this BoundingBox intersects a BoundingSphere.
-		bool Intersects(BoundingSphere const& sphere);
+		bool Intersects(BoundingSphere const& sphere) const;
 
 		// Check if this BoundingBox intersects a Plane.		
-		PlaneIntersectionType Intersects(Plane const& plane);
+		PlaneIntersectionType Intersects(Plane const& plane) const;
 
 		// Check if this BoundingBox intersects a Ray.
 		// Returns the distance along the <see cref="Ray"/> to the intersection point or
@@ -79,9 +79,9 @@ namespace Xna {
 		double Intersects(Ray ray) const;
 
 		//Deconstruction method for BoundingBox.
-		void Deconstruct(Vector3& min, Vector3& max);
+		void Deconstruct(Vector3& min, Vector3& max) const;
 
-		constexpr bool Equals(BoundingBox const& other);
+		constexpr bool Equals(BoundingBox const& other) const;
 
 
 	private:

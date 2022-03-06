@@ -33,15 +33,15 @@ namespace Xna {
 
 		static BoundingSphere CreateFromBoundingBox(BoundingBox box);		
 
-		ContainmentType Contains(BoundingBox box);
-		ContainmentType Contains(BoundingFrustum frustum);
-		ContainmentType Contains(BoundingSphere sphere);
-		ContainmentType Contains(Vector3 point);
-		bool Intersects(BoundingBox box);
-		bool Intersects(BoundingSphere sphere);		
+		ContainmentType Contains(BoundingBox box) const;
+		ContainmentType Contains(BoundingFrustum frustum) const;
+		ContainmentType Contains(BoundingSphere sphere) const;
+		ContainmentType Contains(Vector3 point) const;
+		bool Intersects(BoundingBox box) const;
+		bool Intersects(BoundingSphere sphere) const;		
 		//bool Intersects(BoundingFrustum frustum);			//this code is not implemented in source code.
-		PlaneIntersectionType Intersects(Plane plane);
-		double Intersects(Ray ray);
+		PlaneIntersectionType Intersects(Plane plane) const;
+		double Intersects(Ray ray) const;
 		BoundingSphere Transform(Matrix matrix);
 
 		void Deconstruct(Vector3& center, double& radius);

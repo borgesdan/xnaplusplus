@@ -1,5 +1,5 @@
-#ifndef _PLANE_H_
-#define _PLANE_H_
+#ifndef PLANE_H
+#define PLANE_H
 
 #include "Vector3.h"
 #include "Vector4.h"
@@ -26,6 +26,7 @@ namespace Xna {
 		Plane(double, double, double, double);
 		Plane(Vector3 normal);
 
+		friend std::ostream& operator<< (std::ostream& os, Plane const& pl);
 		friend bool operator!= (Plane plane1, Plane plane2);
 		friend bool operator== (Plane plane1, Plane plane2);
 
@@ -45,6 +46,31 @@ namespace Xna {
 
 	private:
 		PlaneIntersectionType Intersects(Vector3 point);
+	};
+
+	struct PlaneHelper {
+
+		// Returns a value indicating what side (positive/negative) of a plane a point is
+		// point: The point to check with
+		// plane: The plane to check against
+		// Returns greater than zero if on the positive side, less than zero if on the negative size, 0 otherwise.
+		static constexpr double ClassifyPoint(Vector3 const& point, Plane const& plane) {
+			return point.X * plane.Normal.X 
+				+ point.Y * plane.Normal.Y 
+				+ point.Z * plane.Normal.Z 
+				+ plane.D;
+		}
+
+	   // Returns the perpendicular distance from a point to a plane.	   
+	   // point: The point to check.
+	   // plane: The place to check.
+	   // The perpendicular distance from the point to the plane.
+		static constexpr double PerpendicularDistance(Vector3 const& point, Plane const& plane)	{
+			// dist = (ax + by + cz + d) / sqrt(a*a + b*b + c*c)
+			return std::abs((plane.Normal.X * point.X + plane.Normal.Y * point.Y + plane.Normal.Z * point.Z)
+				/ std::sqrt(plane.Normal.X * plane.Normal.X + plane.Normal.Y * plane.Normal.Y + plane.Normal.Z * plane.Normal.Z));
+		}
+
 	};
 }
 

@@ -85,11 +85,11 @@ namespace Xna {
 
 	// Members
 
-	ContainmentType BoundingBox::Contains(BoundingBox const& box) {
+	ContainmentType BoundingBox::Contains(BoundingBox const& box) const {
 		//TO DO
 	}
 
-	ContainmentType BoundingBox::Contains(BoundingFrustum const& frustum) {
+	ContainmentType BoundingBox::Contains(BoundingFrustum const& frustum) const {
 		long i;
 		ContainmentType contained;
 		auto corners = frustum.GetCorners();
@@ -121,7 +121,7 @@ namespace Xna {
 		return ContainmentType::Contains;
 	}
 
-	ContainmentType BoundingBox::Contains(BoundingSphere const& sphere) {
+	ContainmentType BoundingBox::Contains(BoundingSphere const& sphere) const {
 		
 		if (sphere.Center.X - Min.X >= sphere.Radius
 			&& sphere.Center.Y - Min.Y >= sphere.Radius
@@ -206,7 +206,7 @@ namespace Xna {
 
 	}
 
-	ContainmentType BoundingBox::Contains(Vector3 const& point) {
+	ContainmentType BoundingBox::Contains(Vector3 const& point) const {
 		ContainmentType result;
 
 		if (point.X < Min.X
@@ -226,7 +226,7 @@ namespace Xna {
 		return result;
 	}	
 
-	std::vector<Vector3> BoundingBox::GetCorners() {
+	std::vector<Vector3> BoundingBox::GetCorners() const {
 		return std::vector<Vector3>{
 			Vector3(Min.X, Max.Y, Max.Z),
 				Vector3(Max.X, Max.Y, Max.Z),
@@ -239,7 +239,7 @@ namespace Xna {
 		};
 	}
 
-	void BoundingBox::GetCorners(std::vector<Vector3>& corners) {
+	void BoundingBox::GetCorners(std::vector<Vector3>& corners) const {
 		corners[0].X = Min.X;
 		corners[0].Y = Max.Y;
 		corners[0].Z = Max.Z;
@@ -266,7 +266,7 @@ namespace Xna {
 		corners[7].Z = Min.Z;
 	}
 
-	bool BoundingBox::Intersects(BoundingBox const& box) {
+	bool BoundingBox::Intersects(BoundingBox const& box) const {
 
 		bool result;
 
@@ -285,11 +285,11 @@ namespace Xna {
 		return;
 	}
 
-	bool BoundingBox::Intersects(BoundingFrustum const& frustum) {
+	bool BoundingBox::Intersects(BoundingFrustum const& frustum) const {
 		return Contains(frustum) != ContainmentType::Disjoint;
 	}
 
-	bool BoundingBox::Intersects(BoundingSphere const& sphere) {
+	bool BoundingBox::Intersects(BoundingSphere const& sphere) const {
 		
 		double squareDistance = 0.0;
 		Vector3 point = sphere.Center;
@@ -310,7 +310,7 @@ namespace Xna {
 		return squareDistance <= sphere.Radius * sphere.Radius;
 	}
 
-	PlaneIntersectionType BoundingBox::Intersects(Plane const& plane) {
+	PlaneIntersectionType BoundingBox::Intersects(Plane const& plane) const {
 		
 		PlaneIntersectionType result;
 		Vector3 positiveVertex;
@@ -372,13 +372,13 @@ namespace Xna {
 		return ray.Intersects((*this));
 	}
 
-	void BoundingBox::Deconstruct(Vector3 &min, Vector3 &max)
+	void BoundingBox::Deconstruct(Vector3 &min, Vector3 &max) const
 	{
 		min = Min;
 		max = Max;
 	}
 
-	constexpr bool BoundingBox::Equals(BoundingBox const& other) {
+	constexpr bool BoundingBox::Equals(BoundingBox const& other) const {
 		return (Min == other.Min) && (Max == other.Max);
 	}
 }

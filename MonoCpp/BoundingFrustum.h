@@ -1,5 +1,5 @@
-#ifndef _BOUNDING_FRUSTUM_H_
-#define _BOUNDING_FRUSTUM_H_
+#ifndef BOUNDING_FRUSTUM_H
+#define BOUNDING_FRUSTUM_H
 
 #include <vector>
 #include "Matrix.h"
@@ -14,7 +14,6 @@ namespace Xna {
 	struct BoundingFrustum;
 	struct BoundingSphere;
 	struct Ray;
-	//struct Vector3;
 
 	struct BoundingFrustum {
 
@@ -28,26 +27,26 @@ namespace Xna {
 		friend bool operator ==(BoundingFrustum a, BoundingFrustum b);
 		friend bool operator !=(BoundingFrustum a, BoundingFrustum b);
 
-		Matrix Matrix_();
-		Matrix Matrix_(Matrix value);
-		Plane Near();
-		Plane Far();
-		Plane Left();
-		Plane Right();
-		Plane Top();
-		Plane Bottom();
+		constexpr Matrix Matrix_() const;
+		void Matrix_(Matrix value);
+		constexpr Plane Near() const;
+		constexpr Plane Far() const;
+		constexpr Plane Left() const;
+		constexpr Plane Right() const;
+		constexpr Plane Top() const;
+		constexpr Plane Bottom() const;
 
-		ContainmentType Contains(BoundingBox box);
-		ContainmentType Contains(BoundingFrustum frustum);
-		ContainmentType Contains(BoundingSphere sphere);
-		ContainmentType Contains(Vector3 point);
+		ContainmentType Contains(BoundingBox const& box) const;
+		ContainmentType Contains(BoundingFrustum const& frustum) const;
+		ContainmentType Contains(BoundingSphere const& sphere) const;
+		ContainmentType Contains(Vector3 const& point) const;
 		std::vector<Vector3> GetCorners() const;
 		void GetCorners(std::vector<Vector3> corners);
-		bool Intersects(BoundingBox box);
-		bool Intersects(BoundingFrustum frustum);
-		bool Intersects(BoundingSphere sphere);
-		PlaneIntersectionType Intersects(Plane plane);
-		double Intersects(Ray ray);
+		bool Intersects(BoundingBox box) const;
+		bool Intersects(BoundingFrustum frustum) const;
+		bool Intersects(BoundingSphere sphere) const;
+		PlaneIntersectionType Intersects(Plane plane) const;
+		double Intersects(Ray ray) const;
 
 		bool Equals(BoundingFrustum other);
 
