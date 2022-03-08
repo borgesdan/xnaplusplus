@@ -39,9 +39,10 @@ namespace Xna {
 		double DotNormal(Vector3);
 		void Normalize();
 		bool Equals(Plane other);
-		PlaneIntersectionType Intersects(BoundingBox);
-		PlaneIntersectionType Intersects(BoundingFrustum);
-		PlaneIntersectionType Intersects(BoundingSphere);
+		PlaneIntersectionType Intersects(BoundingBox const&) const;
+		PlaneIntersectionType Intersects(BoundingFrustum const&) const;
+		PlaneIntersectionType Intersects(BoundingSphere const&) const;
+		PlaneIntersectionType Intersects(Vector3 const& point) const;
 		void Deconstruct(Vector3, double);
 
 	private:

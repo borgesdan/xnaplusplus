@@ -5,6 +5,8 @@
 
 namespace Xna{	
 
+	struct Matrix;
+
 	struct Vector3 {
 		double X;
 		double Y;
@@ -21,6 +23,8 @@ namespace Xna{
 		friend Vector3 operator- (Vector3, Vector3);
 		friend Vector3 operator+ (Vector3, Vector3);
 		friend Vector3 operator* (Vector3, Vector3);
+		friend Vector3 operator/ (Vector3, Vector3);
+		friend Vector3 operator/ (Vector3, long const&);
 		friend bool operator< (double, Vector3);
 		friend bool operator> (double, Vector3);
 		friend bool operator>= (Vector3, Vector3);
@@ -33,6 +37,10 @@ namespace Xna{
 		static Vector3 Multiply(Vector3, double);
 		static Vector3 Cross(Vector3, Vector3);
 		static double Dot(Vector3, Vector3);
+		static double Distance(Vector3 const& value1, Vector3 const& value2);
+		static double DistanceSquared(Vector3 const& value1, Vector3 const& value2);
+		static Vector3 Subtract(Vector3 const& value1, Vector3 const& value2);
+		static Vector3 Transform(Vector3 const& position, Matrix const& matrix);
 		
 		static Vector3 Up();
 		static Vector3 Down();
@@ -42,7 +50,9 @@ namespace Xna{
 		static Vector3 Normalize(Vector3);
 
 		void Normalize();
+		double Length() const;
 		double LengthSquared();
+
 	};
 }
 #endif

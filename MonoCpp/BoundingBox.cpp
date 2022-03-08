@@ -34,6 +34,7 @@ namespace Xna {
 	}
 
 	// Static
+
 	BoundingBox BoundingBox::CreateFromPoints(std::vector<Vector3> const& points, int index = 0, int count = -1)
 		throw(std::invalid_argument) {
 
@@ -86,7 +87,28 @@ namespace Xna {
 	// Members
 
 	ContainmentType BoundingBox::Contains(BoundingBox const& box) const {
-		//TO DO
+		
+		if (box.Max.X < Min.X
+			|| box.Min.X > Max.X
+			|| box.Max.Y < Min.Y
+			|| box.Min.Y > Max.Y
+			|| box.Max.Z < Min.Z
+			|| box.Min.Z > Max.Z) {
+
+			return ContainmentType::Disjoint;
+		}
+
+		if (box.Min.X >= Min.X
+			&& box.Max.X <= Max.X
+			&& box.Min.Y >= Min.Y
+			&& box.Max.Y <= Max.Y
+			&& box.Min.Z >= Min.Z
+			&& box.Max.Z <= Max.Z) {
+
+			return ContainmentType::Contains;
+		}			
+
+		return ContainmentType::Intersects;
 	}
 
 	ContainmentType BoundingBox::Contains(BoundingFrustum const& frustum) const {

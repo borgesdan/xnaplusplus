@@ -1,5 +1,5 @@
-#ifndef _BOUNDING_SPHERE_H_
-#define _BOUNDING_SPHERE_H_
+#ifndef BOUNDING_SPHERE_H
+#define BOUNDING_SPHERE_H
 
 #include <vector>
 #include "Vector3.h"
@@ -18,7 +18,7 @@ namespace Xna {
 	struct BoundingSphere {
 
 		Vector3 Center;
-		Vector3 Radius;
+		double Radius;
 
 		BoundingSphere();
 		BoundingSphere(Vector3 center, double radius);
@@ -27,26 +27,25 @@ namespace Xna {
 		friend bool operator == (BoundingSphere a, BoundingSphere b);
 		friend bool operator != (BoundingSphere a, BoundingSphere b);
 
-		static BoundingSphere CreateFromFrustum(BoundingFrustum frustum);
-		static BoundingSphere CreateFromPoints(std::vector<Vector3> points);
-		static BoundingSphere CreateMerged(BoundingSphere original, BoundingSphere additional);
+		static BoundingSphere CreateFromFrustum(BoundingFrustum const& frustum);
+		static BoundingSphere CreateFromPoints(std::vector<Vector3> const& points);
+		static BoundingSphere CreateMerged(BoundingSphere const& original, BoundingSphere const& additional);
+		static BoundingSphere CreateFromBoundingBox(BoundingBox const& box);
 
-		static BoundingSphere CreateFromBoundingBox(BoundingBox box);		
-
-		ContainmentType Contains(BoundingBox box) const;
-		ContainmentType Contains(BoundingFrustum frustum) const;
-		ContainmentType Contains(BoundingSphere sphere) const;
-		ContainmentType Contains(Vector3 point) const;
-		bool Intersects(BoundingBox box) const;
-		bool Intersects(BoundingSphere sphere) const;		
+		ContainmentType Contains(BoundingBox const& box) const;
+		ContainmentType Contains(BoundingFrustum const& frustum) const;
+		ContainmentType Contains(BoundingSphere const& sphere) const;
+		ContainmentType Contains(Vector3 const& point) const;
+		bool Intersects(BoundingBox const& box) const;
+		bool Intersects(BoundingSphere const& sphere) const;
 		//bool Intersects(BoundingFrustum frustum);			//this code is not implemented in source code.
-		PlaneIntersectionType Intersects(Plane plane) const;
-		double Intersects(Ray ray) const;
-		BoundingSphere Transform(Matrix matrix);
+		PlaneIntersectionType Intersects(Plane const& plane) const;
+		double Intersects(Ray const& ray) const;
+		BoundingSphere Transform(Matrix const& matrix);
 
-		void Deconstruct(Vector3& center, double& radius);
-		bool Equals(BoundingSphere other);
+		void Deconstruct(Vector3& center, double& radius) const;
+		constexpr bool Equals(BoundingSphere const& other) const;
 	};
 }
 
-#endif // !_BOUNDING_SPHERE_H_
+#endif

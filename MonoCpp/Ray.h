@@ -14,16 +14,16 @@ namespace Xna {
 		Vector3 Direction;
 		Vector3 Position;
 
-		Vector3();
-		Vector3(Vector3 position, Vector3 direction);
+		Ray();
+		Ray(Vector3 position, Vector3 direction);
 
 		friend bool operator !=(Ray a, Ray b);
 		friend bool operator ==(Ray a, Ray b);
 
-		double Intersects(BoundingBox box);
+		double Intersects(BoundingBox const& box) const;
 		//double Intersects(BoundingFrustum frustum); //it's not implement in source code
-		float Intersects(BoundingSphere sphere);
-		float Intersects(Plane plane);
+		double Intersects(BoundingSphere const& sphere) const;
+		double Intersects(Plane const& plane) const;
 
 		void Deconstruct(Vector3& position, Vector3& direction);
 		bool Equals(Ray other);

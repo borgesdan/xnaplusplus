@@ -76,6 +76,7 @@ namespace Xna {
 		// Check if this BoundingBox intersects a Ray.
 		// Returns the distance along the <see cref="Ray"/> to the intersection point or
 		// NaN if the Ray does not intesect this BoundingBox.
+		// The original C# source code returns an object of type Nullable<float>
 		double Intersects(Ray ray) const;
 
 		//Deconstruction method for BoundingBox.
