@@ -1,3 +1,4 @@
+#include <limits>
 #include "Color.h"
 #include "Vector3.h"
 #include "Vector4.h"
@@ -213,6 +214,71 @@ namespace Xna {
 
 	bool Color::Equals(Color const& other) const {
 		return _packedValue == other._packedValue;
+	}
+
+	// Private
+
+	long  Color::constructsColor(Color color, long alpha) {
+
+		long cA = MathHelper::Clamp(alpha, std::numeric_limits<byte>::min(),
+			std::numeric_limits<byte>::max());
+
+		unsigned long clampedA = static_cast<long>(cA);
+
+		if ((alpha & 0xFFFFFF00) != 0) {
+
+			_packedValue = (color._packedValue & 0x00FFFFFF) | (clampedA << 24);
+		}
+		else
+		{
+			_packedValue = (color._packedValue & 0x00FFFFFF) | (clampedA << 24);
+		}
+	}
+
+	long Color::constructsRGB(long r, long g, long b) {
+		if (((r | g | b) & 0xFFFFFF00) != 0) {
+			long _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			long _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			long _cb = MathHelper::Clamp(b, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+
+			unsigned long clampedR = static_cast<unsigned long>(_cr);
+			unsigned long clampedG = static_cast<unsigned long>(_cg);
+			unsigned long clampedB = static_cast<unsigned long>(_cb);
+
+			_packedValue |= (clampedB << 16) | (clampedG << 8) | (clampedR);
+		}
+		else
+		{
+			_packedValue = static_cast<unsigned long>(b << 16)
+				| static_cast<unsigned long>(g << 8)
+				| static_cast<unsigned long>(r);
+		}
+	}
+
+	long Color::constructsRGBA(long r, long g, long b, long alpha) {
+		if (((r | g | b | alpha) & 0xFFFFFF00) != 0) {
+			long _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			long _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			long _cb = MathHelper::Clamp(b, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			long _ca = MathHelper::Clamp(alpha, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+
+			unsigned long clampedR = static_cast<unsigned long>(_cr);
+			unsigned long clampedG = static_cast<unsigned long>(_cg);
+			unsigned long clampedB = static_cast<unsigned long>(_cb);
+			unsigned long clampedA = static_cast<unsigned long>(_ca);
+
+			_packedValue = (clampedA << 24)
+				| (clampedB << 16)
+				| (clampedG << 8)
+				| (clampedR);
+		}
+		else
+		{
+			_packedValue = static_cast<unsigned long>(alpha << 24)
+				| static_cast<unsigned long>(b << 16)
+				| static_cast<unsigned long>(g << 8)
+				| static_cast<unsigned long>(r);
+		}
 	}
 
 	// Static const

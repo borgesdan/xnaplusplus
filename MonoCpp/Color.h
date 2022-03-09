@@ -2,7 +2,6 @@
 #define COLOR_H
 
 #include <iostream>
-#include <limits>
 #include "CSharp.h" // unsigned char as byte
 
 namespace Xna {
@@ -200,68 +199,11 @@ namespace Xna {
 	private:
 		unsigned long _packedValue;		
 
-		long constructsColor(Color color, long alpha) {
-			
-			long cA = MathHelper::Clamp(alpha, std::numeric_limits<byte>::min(),
-				std::numeric_limits<byte>::max());
-			
-			unsigned long clampedA = static_cast<long>(cA);
+		long constructsColor(Color color, long alpha);
 
-			if ((alpha & 0xFFFFFF00) != 0) {								
-
-				_packedValue = (color._packedValue & 0x00FFFFFF) | (clampedA << 24);
-			}
-			else
-			{
-				_packedValue = (color._packedValue & 0x00FFFFFF) | (clampedA << 24);
-			}
-		}
-
-		long constructsRGB(long r, long g, long b) {
-			if (((r | g | b) & 0xFFFFFF00) != 0) {
-				long _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-				long _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-				long _cb = MathHelper::Clamp(b, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-
-				unsigned long clampedR = static_cast<unsigned long>(_cr);
-				unsigned long clampedG = static_cast<unsigned long>(_cg);
-				unsigned long clampedB = static_cast<unsigned long>(_cb);
-
-				_packedValue |= (clampedB << 16) | (clampedG << 8) | (clampedR);
-			}
-			else
-			{
-				_packedValue = static_cast<unsigned long>(b << 16)
-					| static_cast<unsigned long>(g << 8)
-					| static_cast<unsigned long>(r);
-			}
-		}
+		long constructsRGB(long r, long g, long b);
 		
-		long constructsRGBA(long r, long g, long b, long alpha) {
-			if (((r | g | b | alpha) & 0xFFFFFF00) != 0) {
-				long _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-				long _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-				long _cb = MathHelper::Clamp(b, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-				long _ca = MathHelper::Clamp(alpha, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-
-				unsigned long clampedR = static_cast<unsigned long>(_cr);
-				unsigned long clampedG = static_cast<unsigned long>(_cg);
-				unsigned long clampedB = static_cast<unsigned long>(_cb);
-				unsigned long clampedA = static_cast<unsigned long>(_ca);
-
-				_packedValue = (clampedA <<24)
-					| (clampedB << 16)
-					| (clampedG << 8)
-					| (clampedR);
-			}
-			else
-			{
-				_packedValue = static_cast<unsigned long>(alpha << 24)
-					| static_cast<unsigned long>(b << 16)
-					| static_cast<unsigned long>(g << 8)
-					| static_cast<unsigned long>(r);
-			}
-		}
+		long constructsRGBA(long r, long g, long b, long alpha);
 	};
 }
 
