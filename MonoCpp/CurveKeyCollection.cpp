@@ -13,7 +13,7 @@ namespace Xna {
 		return false;
 	}
 
-	CurveKey CurveKeyCollection::Get(int index) const {
+	CurveKey& CurveKeyCollection::Get(int index) {
 		return _keys[index];
 	}
 

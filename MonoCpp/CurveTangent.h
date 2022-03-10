@@ -12,7 +12,7 @@ namespace Xna {
 		Linear,
 		// The smoouth tangent which contains the inflection between CurveKey.
 		//TangentIn and CurveKey.TangentOut by taking into account the values of both neighbors of the CurveKey.
-		Smoth
+		Smooth
 	};
 }
 

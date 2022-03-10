@@ -16,7 +16,7 @@ namespace Xna {
 		bool IsReadOnly() const;
 
 		//IEnumerator IEnumerable.GetEnumerator()		
-		CurveKey Get(int index) const;
+		CurveKey& Get(int index);
 		void Set(int index, CurveKey value);
 		void Add(CurveKey const& item);
 		void Clear();
