@@ -119,7 +119,7 @@ namespace Xna {
 		return (value > 0) && ((value & (value - 1)) == 0);
 	}
 
-	bool IsPositiveInfinity(double value) {
+	bool  MathHelper::IsPositiveInfinity(double value) {
 		return isinf(value) && value > 0;
 	}
 }

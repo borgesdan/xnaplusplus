@@ -19,7 +19,7 @@ namespace Xna {
 		// Represents the value of pi times two.
 		static constexpr double TwoPi = Pi * 2.0;
 		// Represents the value of pi times two.
-		static constexpr double Tau = TwoPi;
+		static constexpr double Tau = TwoPi;				
 
 		//Returns the Cartesian coordinate for one axis of a point that is defined by a given triangle and two normalized barycentric (areal) coordinates.
 		static double Barycentric(double, double, double, double, double);
@@ -56,14 +56,31 @@ namespace Xna {
 		static double WrapAngle(double); 
 		// Determines if value is powered by two.
 		static bool IsPowerOfTwo(long);
-	};
 
-	//Represents the constant to converts radians to degrees.
-	static constexpr double RADIANS_TO_DEGREE = 57.295779513082320876798154814105;
-	//Represents the constant to converts degress to radians.
-	static constexpr double DEGREE_TO_RADIANS = 0.017453292519943295769236907684886;
-	//Returns true if the value is infinity and greater then 0.
-	bool IsPositiveInfinity(double);
+		//----- C#: MathF.cs methods
+
+		static double Sqrt(double value);
+		static double Pow(double x, double y);
+		static double Sin(double value);
+		static double Cos(double value);
+		static double Tan(double value);
+		static double Asin(double value);
+		static double Acos(double value);
+		static double Atan(double value);
+		static double Round(double value);
+		static double Ceiling(double value);
+		static double Floor(double value);
+		
+		//----- Others
+
+		//Represents the constant to converts radians to degrees.
+		static constexpr double RADIANS_TO_DEGREE = 57.295779513082320876798154814105;
+		//Represents the constant to converts degress to radians.
+		static constexpr double DEGREE_TO_RADIANS = 0.017453292519943295769236907684886;
+
+		//Returns true if the value is infinity and greater then 0.
+		bool IsPositiveInfinity(double);
+	};	
 }
 
 #endif
