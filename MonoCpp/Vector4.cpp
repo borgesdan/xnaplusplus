@@ -59,12 +59,12 @@ namespace Xna {
 	}
 
 	//-----Static
-	static Vector4 Zero() { return Vector4(0); };
-	static Vector4 One() { return Vector4(1.); };
-	static Vector4 UnitX() { return Vector4(1., 0, 0, 0); };
-	static Vector4 UnitY() { return Vector4(0, 1., 0, 0); };
-	static Vector4 UnitZ() { return Vector4(0, 0, 1., 0); };
-	static Vector4 UnitW() { return Vector4(0, 0, 0, 1.); };
+	Vector4 Vector4::Zero() { return Vector4(0); };
+	Vector4 Vector4::One() { return Vector4(1.); };
+	Vector4 Vector4::UnitX() { return Vector4(1., 0, 0, 0); };
+	Vector4 Vector4::UnitY() { return Vector4(0, 1., 0, 0); };
+	Vector4 Vector4::UnitZ() { return Vector4(0, 0, 1., 0); };
+	Vector4 Vector4::UnitW() { return Vector4(0, 0, 0, 1.); };
 
 	Vector4 Vector4::Add(Vector4 const& value1, Vector4 const& value2) {
 		return Vector4(
@@ -287,7 +287,7 @@ namespace Xna {
 		}
 
 	}
-	
+
 	void Vector4::Transform(std::vector<Vector4> const& sourceArray, Matrix& matrix, std::vector<Vector4>& destinationArray) {
 
 		for (int i = 0; i < sourceArray.size(); i++)

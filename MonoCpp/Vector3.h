@@ -6,53 +6,88 @@
 namespace Xna{	
 
 	struct Matrix;
+	struct Vector2;
+	struct Quaternion;
 
+	// Describes a 4D-vector.
+	// C#: struct Vector3.
 	struct Vector3 {
 		double X;
 		double Y;
 		double Z;
 
 		Vector3();
-		Vector3(double, double, double);
+		Vector3(double x, double y, double z);
 		Vector3(double value);
+		Vector3(Vector2 value, double z);
 
 		Vector3 operator- () const;
-		Vector3 operator+ () const;
 
 		friend std::ostream& operator<< (std::ostream& os, Vector3 const& vec);
 		friend Vector3 operator- (Vector3, Vector3);
 		friend Vector3 operator+ (Vector3, Vector3);
 		friend Vector3 operator* (Vector3, Vector3);
+		friend Vector3 operator* (Vector3, double scaleFactor);
 		friend Vector3 operator/ (Vector3, Vector3);
-		friend Vector3 operator/ (Vector3, long const&);
-		friend bool operator< (double, Vector3);
-		friend bool operator> (double, Vector3);
-		friend bool operator>= (Vector3, Vector3);
-		friend bool operator<= (Vector3, Vector3);
-		friend bool operator&& (Vector3, Vector3);
-		friend bool operator== (Vector3, Vector3);
-		friend bool operator!= (Vector3, Vector3);
+		friend Vector3 operator/ (Vector3, double divider);	
 
-		static Vector3 Multiply(Vector3, Vector3);
-		static Vector3 Multiply(Vector3, double);
-		static Vector3 Cross(Vector3, Vector3);
-		static double Dot(Vector3, Vector3);
-		static double Distance(Vector3 const& value1, Vector3 const& value2);
-		static double DistanceSquared(Vector3 const& value1, Vector3 const& value2);
-		static Vector3 Subtract(Vector3 const& value1, Vector3 const& value2);
-		static Vector3 Transform(Vector3 const& position, Matrix const& matrix);
-		
+		// Returns a <see cref="Vector4"/> with components 0, 0, 0, 0.
+		static Vector3 Zero();
+		static Vector3 One();
+		static Vector3 UnitX();
+		static Vector3 UnitY();
+		static Vector3 UnitZ();
 		static Vector3 Up();
 		static Vector3 Down();
 		static Vector3 Right();
 		static Vector3 Left();
 		static Vector3 Forward();
-		static Vector3 Normalize(Vector3);
+		static Vector3 Backward();
 
+		static Vector3 Add(Vector3 const& value1, Vector3 const& value2);
+		static Vector3 Divide(Vector3 const& value1, Vector3 const& value2);
+		static Vector3 Divide(Vector3 const& value1, double divider);
+		static Vector3 Subtract(Vector3 const& value1, Vector3 const& value2);
+		static Vector3 Multiply(Vector3 const& value1, Vector3 const& value2);
+		static Vector3 Multiply(Vector3 const& value1, double scaleFactor);
+		static Vector3 Barycentric(Vector3 const& value1, Vector3 const& value2, Vector3 const& value3, double amount1, double amount2);
+		static Vector3 CatmullRom(Vector3 const& value1, Vector3 const& value2, Vector3 const& value3, Vector3 const& value4, double amount);
+		static Vector3 Ceiling(Vector3 const& value);
+		static Vector3 Clamp(Vector3 const& value1, Vector3 const& min, Vector3 const& max);
+		static Vector3 Cross(Vector3 const& value1, Vector3 const& value2);
+		static double Dot(Vector3 const& value1, Vector3 const& value2);
+		static double Distance(Vector3 const& value1, Vector3 const& value2);
+		static double DistanceSquared(Vector3 const& value1, Vector3 const& value2);	
+		static Vector3 Floor(Vector3 const& value);
+		static Vector3 Hermite(Vector3 const& value1, Vector3 const& tangent1, Vector3 const& value2, Vector3 const& tangent2, double amount);
+		static Vector3 Transform(Vector3 const& position, Matrix const& matrix);
+		static Vector3 Normalize(Vector3 const&);
+		static Vector3 Lerp(Vector3 const& value1, Vector3 const& value2, double amount);
+		static Vector3 LerpPrecise(Vector3 const& value1, Vector3 const& value2, double amount);
+		static Vector3 Max(Vector3 const& value1, Vector3 const& value2);
+		static Vector3 Min(Vector3 const& value1, Vector3 const& value2);
+		static Vector3 Negate(Vector3 const& value);
+		static Vector3 Reflect(Vector3 const& vector, Vector3 const& normal);
+		static Vector3 Round(Vector3 const& value);
+		static Vector3 SmoothStep(Vector3 const& value1, Vector3 const& value2, double amount);
+		static Vector3 Transform(Vector3 const& position, Matrix const& matrix);
+		static Vector3 Transform(Vector3 const& value, Quaternion const& rotation);
+		static void Transform(Vector3[] sourceArray, int sourceIndex, ref Matrix matrix, Vector3[] destinationArray, int destinationIndex, int length);
+		static void Transform(Vector3[] sourceArray, int sourceIndex, ref Quaternion rotation, Vector3[] destinationArray, int destinationIndex, int length);
+		static void Transform(Vector3[] sourceArray, ref Matrix matrix, Vector3[] destinationArray);
+		static void Transform(Vector3[] sourceArray, ref Quaternion rotation, Vector3[] destinationArray);
+		static Vector3 TransformNormal(Vector3 const& normal, Matrix const& matrix);
+		static void TransformNormal(Vector3[] sourceArray,	int sourceIndex, ref Matrix matrix,	Vector3[] destinationArray,	int destinationIndex, int length);
+		static void TransformNormal(Vector3[] sourceArray, ref Matrix matrix, Vector3[] destinationArray);
+
+		void Round();
+		void Ceiling();
 		void Normalize();
 		double Length() const;
-		double LengthSquared();
-
+		double LengthSquared() const;
+		void Floor();		
+		void Deconstruct(double& x, double& y, double& z) const;
+		bool Equals(Vector3 other) const;
 	};
 }
 #endif
