@@ -1,6 +1,8 @@
 #ifndef _MATHHELPER_H_
 #define _MATHHELPER_H_
 
+#include <limits>
+
 namespace Xna {
 
 	//Contains commonly used precalculated values and mathematical operations.
@@ -71,15 +73,19 @@ namespace Xna {
 		static double Ceiling(double value);
 		static double Floor(double value);
 		
+		
 		//----- Others
 
+		static constexpr double EPSILON = std::numeric_limits<double>::epsilon();
 		//Represents the constant to converts radians to degrees.
 		static constexpr double RADIANS_TO_DEGREE = 57.295779513082320876798154814105;
 		//Represents the constant to converts degress to radians.
 		static constexpr double DEGREE_TO_RADIANS = 0.017453292519943295769236907684886;
 
+		static bool IsNan(double d);
+
 		//Returns true if the value is infinity and greater then 0.
-		bool IsPositiveInfinity(double);
+		static bool IsPositiveInfinity(double);
 	};	
 }
 

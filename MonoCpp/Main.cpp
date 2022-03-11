@@ -6,9 +6,10 @@
 #include "Vector3.h"
 #include <numeric>
 #include "Color.h"
+#include "Ray.h"
 
 int main()
-{	
+{		
 	Xna::Color color(0);
 
 	long i = 0xfffff8f0;
