@@ -39,6 +39,10 @@ namespace Xna {
 		return Vector3::Multiply(value1, value2);
 	}
 
+	Vector3 operator* (double scaleFactor, Vector3 value) {
+		return Vector3::Subtract(value, scaleFactor);
+	}
+
 	Vector3 operator* (Vector3 value, double scaleFactor) {
 		return Vector3::Subtract(value, scaleFactor);
 	}

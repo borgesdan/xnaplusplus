@@ -29,6 +29,7 @@ namespace Xna {
 		friend Vector3 operator+ (Vector3, Vector3);
 		friend Vector3 operator* (Vector3, Vector3);
 		friend Vector3 operator* (Vector3, double scaleFactor);
+		friend Vector3 operator* (double scaleFactor, Vector3);
 		friend Vector3 operator/ (Vector3, Vector3);
 		friend Vector3 operator/ (Vector3, double divider);
 

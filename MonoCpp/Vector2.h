@@ -1,5 +1,5 @@
-#ifndef _VECTOR2_H_
-#define _VECTOR2_H_
+#ifndef VECTOR2_H
+#define VECTOR2_H
 
 #include <vector>
 
@@ -9,10 +9,13 @@ namespace Xna {
 	struct Quaternion;
 	struct Matrix;
 
+	// Describes a 2D-vector.
+	// C#: struct Vector2.
 	struct Vector2 {
 		double X;
 		double Y;
 
+		Vector2();
 		Vector2(double x, double y);
 		Vector2(double value);
 
@@ -21,10 +24,10 @@ namespace Xna {
 		friend Vector2 operator+ (Vector2, Vector2);
 		friend Vector2 operator- (Vector2, Vector2);
 		friend Vector2 operator* (Vector2, Vector2);
-		friend Vector2 operator* (Vector2, long);
-		friend Vector2 operator* (long, Vector2);
+		friend Vector2 operator* (Vector2, double);
+		friend Vector2 operator* (double, Vector2);
 		friend Vector2 operator/ (Vector2, Vector2);
-		friend Vector2 operator/ (Vector2, long const&);
+		friend Vector2 operator/ (Vector2, double);
 		friend Vector2 operator== (Vector2, Vector2);
 		friend Vector2 operator!= (Vector2, Vector2);
 
