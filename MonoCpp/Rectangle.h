@@ -1,5 +1,7 @@
-#ifndef _RECTANGLE_H_
-#define _RECTANGLE_H_
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+
+#include <iostream>
 
 namespace Xna {		
 
@@ -7,6 +9,7 @@ namespace Xna {
 	struct Vector2;
 
 	//Describes a 2D rectangle
+	//C#: struct Rectangle
 	struct Rectangle {		
 
 		long X;		
@@ -18,6 +21,7 @@ namespace Xna {
 		Rectangle(long x, long y, long width, long height);
 		Rectangle(Point location, Point size);
 
+		friend std::ostream& operator<< (std::ostream& os, Rectangle const& obj);
 		friend bool operator== (Rectangle, Rectangle);
 		friend bool operator!= (Rectangle, Rectangle);
 
@@ -43,39 +47,38 @@ namespace Xna {
 		
 		//The top-left coordinate.
 		Point Location() const;
-		void Location(Point const&);
+		void Location(Point const& value);
 		
 		//The width-height coordinates.
 		Point Size() const;
-		void Size(Point const&);
+		void Size(Point const& value);
 		
 		//A point located in the center of this rectangle.
 		Point Center() const;
 
 		//Gets whether or not the provided coordinates lie within the bounds.
-		bool Contains(long, long) const;
-		bool Contains(double, double) const;
-		bool Contains(Point const&) const;
-		bool Contains(Rectangle const&) const;
-
-		//Compares whether current rectangle is equal to specified rectangle.
-		bool Equals(Rectangle const&) const;
+		bool Contains(long x, long y) const;
+		bool Contains(double x, double y) const;
+		bool Contains(Point const& value) const;
+		bool Contains(Rectangle const& value) const;		
 
 		//Adjusts the edges of this rectangle by specified horizontal and vertical amounts.
-		void Inflate(long, long);
-		void Inflate(double, double);
+		void Inflate(long horizontalAmount, long verticalAmount);
+		void Inflate(double horizontalAmount, double verticalAmount);
 
 		//Gets whether or not the other rectangle intersects with this rectangle.
-		bool Intersects(Rectangle const&) const;		
+		bool Intersects(Rectangle const& value) const;		
 
 		//Changes the location of this rectangle..
-		void Offset(long, long);
-		void Offset(double, double);
-		void Offset(Point const&);		
-		void Offset(Vector2 const&);		
+		void Offset(long offsetX, long offsetY);
+		void Offset(double offsetX, double offsetY);
+		void Offset(Point const& amount);		
+		void Offset(Vector2 const& amount);		
 
 		//Deconstruction method for rectangle.
-		void Deconstruct(long&, long&, long&, long&);
+		void Deconstruct(long& x, long& y, long& width, long& height) const;
+		//Compares whether current rectangle is equal to specified rectangle.
+		bool Equals(Rectangle const& other) const;
 	};
 }
 

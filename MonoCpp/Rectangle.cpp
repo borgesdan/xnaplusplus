@@ -15,6 +15,10 @@ namespace Xna {
 
 	//operator
 
+	std::ostream& operator<< (std::ostream& os, Rectangle const& obj) {
+		return os << "{X:" << obj.X << " Y:" << obj.Y << " Width:" << obj.Width << " Height:" << obj.Height + "}";
+	}
+
 	bool operator== (Rectangle a, Rectangle b) {
 		return a.Equals(b);
 	}
@@ -120,13 +124,6 @@ namespace Xna {
 			&& (Y <= value.Y)) && ((value.Y + value.Height) <= (Y + Height)));
 	}
 
-	bool Rectangle::Equals(Rectangle const& other) const {
-		return ((X == other.X)
-			&& (Y == other.Y)
-			&& (Width == other.Width)
-			&& (Height == other.Height));
-	}
-
 	void Rectangle::Inflate(long horizontalAmount, long verticalAmount) {
 		X -= horizontalAmount;
 		Y -= verticalAmount;
@@ -166,10 +163,17 @@ namespace Xna {
 		Offset(amount.X, amount.Y);
 	}
 
-	void Rectangle::Deconstruct(long& x, long& y, long& width, long& height) {
+	void Rectangle::Deconstruct(long& x, long& y, long& width, long& height) const {
 		x = X;
 		y = Y;
 		width = Width;
 		height = Height;
+	}
+
+	bool Rectangle::Equals(Rectangle const& other) const {
+		return ((X == other.X)
+			&& (Y == other.Y)
+			&& (Width == other.Width)
+			&& (Height == other.Height));
 	}
 }
