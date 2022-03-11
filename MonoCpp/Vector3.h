@@ -2,14 +2,15 @@
 #define VECTOR3_H
 
 #include <iostream>
+#include <vector>
 
-namespace Xna{	
+namespace Xna {
 
 	struct Matrix;
 	struct Vector2;
 	struct Quaternion;
 
-	// Describes a 4D-vector.
+	// Describes a 3D-vector.
 	// C#: struct Vector3.
 	struct Vector3 {
 		double X;
@@ -29,7 +30,7 @@ namespace Xna{
 		friend Vector3 operator* (Vector3, Vector3);
 		friend Vector3 operator* (Vector3, double scaleFactor);
 		friend Vector3 operator/ (Vector3, Vector3);
-		friend Vector3 operator/ (Vector3, double divider);	
+		friend Vector3 operator/ (Vector3, double divider);
 
 		// Returns a <see cref="Vector4"/> with components 0, 0, 0, 0.
 		static Vector3 Zero();
@@ -57,11 +58,10 @@ namespace Xna{
 		static Vector3 Cross(Vector3 const& value1, Vector3 const& value2);
 		static double Dot(Vector3 const& value1, Vector3 const& value2);
 		static double Distance(Vector3 const& value1, Vector3 const& value2);
-		static double DistanceSquared(Vector3 const& value1, Vector3 const& value2);	
+		static double DistanceSquared(Vector3 const& value1, Vector3 const& value2);
 		static Vector3 Floor(Vector3 const& value);
 		static Vector3 Hermite(Vector3 const& value1, Vector3 const& tangent1, Vector3 const& value2, Vector3 const& tangent2, double amount);
-		static Vector3 Transform(Vector3 const& position, Matrix const& matrix);
-		static Vector3 Normalize(Vector3 const&);
+		static Vector3 Normalize(Vector3 const& value);
 		static Vector3 Lerp(Vector3 const& value1, Vector3 const& value2, double amount);
 		static Vector3 LerpPrecise(Vector3 const& value1, Vector3 const& value2, double amount);
 		static Vector3 Max(Vector3 const& value1, Vector3 const& value2);
@@ -72,20 +72,20 @@ namespace Xna{
 		static Vector3 SmoothStep(Vector3 const& value1, Vector3 const& value2, double amount);
 		static Vector3 Transform(Vector3 const& position, Matrix const& matrix);
 		static Vector3 Transform(Vector3 const& value, Quaternion const& rotation);
-		static void Transform(Vector3[] sourceArray, int sourceIndex, ref Matrix matrix, Vector3[] destinationArray, int destinationIndex, int length);
-		static void Transform(Vector3[] sourceArray, int sourceIndex, ref Quaternion rotation, Vector3[] destinationArray, int destinationIndex, int length);
-		static void Transform(Vector3[] sourceArray, ref Matrix matrix, Vector3[] destinationArray);
-		static void Transform(Vector3[] sourceArray, ref Quaternion rotation, Vector3[] destinationArray);
+		static void Transform(std::vector<Vector3>& sourceArray, int sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, int destinationIndex, int length);
+		static void Transform(std::vector<Vector3>& sourceArray, int sourceIndex, Quaternion& rotation, std::vector<Vector3>& destinationArray, int destinationIndex, int length);
+		static void Transform(std::vector<Vector3>& sourceArray, Matrix& matrix, std::vector<Vector3>& destinationArray);
+		static void Transform(std::vector<Vector3>& sourceArray, Quaternion& rotation, std::vector<Vector3>& destinationArray);
 		static Vector3 TransformNormal(Vector3 const& normal, Matrix const& matrix);
-		static void TransformNormal(Vector3[] sourceArray,	int sourceIndex, ref Matrix matrix,	Vector3[] destinationArray,	int destinationIndex, int length);
-		static void TransformNormal(Vector3[] sourceArray, ref Matrix matrix, Vector3[] destinationArray);
+		static void TransformNormal(std::vector<Vector3>& sourceArray, int sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, int destinationIndex, int length);
+		static void TransformNormal(std::vector<Vector3>& sourceArray, Matrix& matrix, std::vector<Vector3>& destinationArray);
 
 		void Round();
 		void Ceiling();
 		void Normalize();
 		double Length() const;
 		double LengthSquared() const;
-		void Floor();		
+		void Floor();
 		void Deconstruct(double& x, double& y, double& z) const;
 		bool Equals(Vector3 other) const;
 	};
