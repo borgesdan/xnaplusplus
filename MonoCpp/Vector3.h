@@ -73,13 +73,13 @@ namespace Xna {
 		static Vector3 SmoothStep(Vector3 const& value1, Vector3 const& value2, double amount);
 		static Vector3 Transform(Vector3 const& position, Matrix const& matrix);
 		static Vector3 Transform(Vector3 const& value, Quaternion const& rotation);
-		static void Transform(std::vector<Vector3>& sourceArray, int sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, int destinationIndex, int length);
-		static void Transform(std::vector<Vector3>& sourceArray, int sourceIndex, Quaternion& rotation, std::vector<Vector3>& destinationArray, int destinationIndex, int length);
-		static void Transform(std::vector<Vector3>& sourceArray, Matrix& matrix, std::vector<Vector3>& destinationArray);
-		static void Transform(std::vector<Vector3>& sourceArray, Quaternion& rotation, std::vector<Vector3>& destinationArray);
+		static void Transform(std::vector<Vector3> const& sourceArray, int sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, int destinationIndex, int length);
+		static void Transform(std::vector<Vector3> const& sourceArray, int sourceIndex, Quaternion& rotation, std::vector<Vector3>& destinationArray, int destinationIndex, int length);
+		static void Transform(std::vector<Vector3> const& sourceArray, Matrix& matrix, std::vector<Vector3>& destinationArray);
+		static void Transform(std::vector<Vector3> const& sourceArray, Quaternion& rotation, std::vector<Vector3>& destinationArray);
 		static Vector3 TransformNormal(Vector3 const& normal, Matrix const& matrix);
-		static void TransformNormal(std::vector<Vector3>& sourceArray, int sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, int destinationIndex, int length);
-		static void TransformNormal(std::vector<Vector3>& sourceArray, Matrix& matrix, std::vector<Vector3>& destinationArray);
+		static void TransformNormal(std::vector<Vector3> const& sourceArray, int sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, int destinationIndex, int length);
+		static void TransformNormal(std::vector<Vector3> const& sourceArray, Matrix& matrix, std::vector<Vector3>& destinationArray);
 
 		void Round();
 		void Ceiling();
