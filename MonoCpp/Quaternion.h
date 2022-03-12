@@ -22,7 +22,7 @@ namespace Xna {
 		Quaternion(Vector3 value, double w);
 		Quaternion(Vector4 value);
 
-		friend std::ostream& operator<< (std::ostream& os, Quaternion const& obj);
+		friend std::ostream& operator<< (std::ostream& os, Quaternion const& o);
 		Quaternion operator -(Quaternion quaternion);
 		friend Quaternion operator +(Quaternion quaternion1, Quaternion quaternion2);
 		friend Quaternion operator /(Quaternion quaternion1, Quaternion quaternion2);
