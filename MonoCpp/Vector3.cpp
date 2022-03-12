@@ -27,32 +27,40 @@ namespace Xna {
 		return os << "{X:" << vec.X << " Y:" << vec.Y << " Z:" << vec.Z << "}";
 	}
 
-	Vector3 operator- (Vector3 value1, Vector3 value2) {
+	Vector3 operator- (Vector3 const& value1, Vector3 const& value2) {
 		return Vector3::Subtract(value1, value2);
 	}
 
-	Vector3 operator+ (Vector3 value1, Vector3 value2) {
+	Vector3 operator+ (Vector3 const& value1, Vector3 const& value2) {
 		return Vector3::Add(value1, value2);
 	}
 
-	Vector3 operator* (Vector3 value1, Vector3 value2) {
+	Vector3 operator* (Vector3 const& value1, Vector3 const& value2) {
 		return Vector3::Multiply(value1, value2);
 	}
 
-	Vector3 operator* (double scaleFactor, Vector3 value) {
+	Vector3 operator* (double const& scaleFactor, Vector3 const& value) {
 		return Vector3::Subtract(value, scaleFactor);
 	}
 
-	Vector3 operator* (Vector3 value, double scaleFactor) {
+	Vector3 operator* (Vector3 const& value, double const& scaleFactor) {
 		return Vector3::Subtract(value, scaleFactor);
 	}
 
-	Vector3 operator/ (Vector3 value1, Vector3 value2) {
+	Vector3 operator/ (Vector3 const& value1, Vector3 const& value2) {
 		return Vector3::Divide(value1, value2);
 	}
 
-	Vector3 operator/ (Vector3 value, double divider) {
+	Vector3 operator/ (Vector3 const& value, double const& divider) {
 		return Vector3::Divide(value, divider);
+	}
+
+	bool operator== (Vector3 const& value1, Vector3 const& value2) {
+		return value1.Equals(value2);
+	}
+
+	bool operator!= (Vector3 const& value1, Vector3 const& value2) {
+		return !value1.Equals(value2);
 	}
 
 	//----- Static

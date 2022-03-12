@@ -25,13 +25,15 @@ namespace Xna {
 		Vector3 operator- () const;
 
 		friend std::ostream& operator<< (std::ostream& os, Vector3 const& vec);
-		friend Vector3 operator- (Vector3, Vector3);
-		friend Vector3 operator+ (Vector3, Vector3);
-		friend Vector3 operator* (Vector3, Vector3);
-		friend Vector3 operator* (Vector3, double scaleFactor);
-		friend Vector3 operator* (double scaleFactor, Vector3);
-		friend Vector3 operator/ (Vector3, Vector3);
-		friend Vector3 operator/ (Vector3, double divider);
+		friend Vector3 operator- (Vector3 const&, Vector3 const&);
+		friend Vector3 operator+ (Vector3 const&, Vector3 const&);
+		friend Vector3 operator* (Vector3 const&, Vector3 const&);
+		friend Vector3 operator* (Vector3 const&, double const&);
+		friend Vector3 operator* (double const&, Vector3 const&);
+		friend Vector3 operator/ (Vector3 const&, Vector3 const&);
+		friend Vector3 operator/ (Vector3 const&, double const& divider);
+		friend bool operator== (Vector3 const&, Vector3 const&);
+		friend bool operator!= (Vector3 const&, Vector3 const&);
 
 		// Returns a <see cref="Vector4"/> with components 0, 0, 0, 0.
 		static Vector3 Zero();
