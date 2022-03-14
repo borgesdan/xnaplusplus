@@ -2,7 +2,6 @@
 #define VECTOR4_H
 
 #include <vector>
-#include <iostream>
 
 namespace Xna {
 
@@ -36,7 +35,6 @@ namespace Xna {
 		Vector4(double value);
 
 		Vector4 operator- () const;
-		friend std::ostream& operator<< (std::ostream& os, Vector4 const& obj);
 		friend Vector4 operator- (Vector4 const& value1, Vector4 const& value2);
 		friend Vector4 operator+ (Vector4 const& value1, Vector4 const& value2);
 		friend Vector4 operator* (Vector4 const& value1, Vector4 const& value2);

@@ -22,10 +22,6 @@ namespace Xna {
 		return Vector4::Negate((*this));
 	}
 
-	std::ostream& operator<< (std::ostream& os, Vector4 const& obj) {
-		return os << "{X:" << obj.X << " Y:" << obj.Y << " Z:" << obj.Z << " W:" << obj.W << "}";
-	}
-
 	Vector4 operator- (Vector4 const& value1, Vector4 const& value2) {
 		Vector4::Subtract(value1, value2);
 	}

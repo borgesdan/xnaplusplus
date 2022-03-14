@@ -121,5 +121,5 @@ namespace Xna {
 
 	bool  MathHelper::IsPositiveInfinity(double value) {
 		return isinf(value) && value > 0;
-	}
+	}	
 }

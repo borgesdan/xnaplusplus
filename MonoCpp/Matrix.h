@@ -1,5 +1,5 @@
-#ifndef _MATRIX_H_
-#define _MATRIX_H_
+#ifndef MATRIX_H
+#define MATRIX_H
 
 #include <vector>
 
@@ -41,9 +41,9 @@ namespace Xna {
 		Matrix(Vector4 row1, Vector4 row2, Vector4 row3, Vector4 row4);		
 
 		//Se for um número fora de 0 a 15 retornará M11.
-		double& operator[] (long);
-		double& operator[] (Point);
-		Matrix operator- ();
+		double& operator[] (long index);
+		double& operator[] (Point row_col);
+		Matrix operator- (Matrix matrix);
 		friend Matrix operator+ (Matrix matrix1, Matrix matrix2);
 		friend Matrix operator- (Matrix matrix1, Matrix matrix2);
 		friend Matrix operator/ (Matrix matrix1, Matrix matrix2);
@@ -54,64 +54,61 @@ namespace Xna {
 		friend Matrix operator* (Matrix matrix, double scaleFactor);
 
 		static Matrix Identity();
-		static Matrix Add(Matrix, Matrix);
-		static Matrix CreateBillboard(Vector3 objectPosition, Vector3 cameraPosition,
-			Vector3 cameraUpVector, Vector3 cameraForwardVector);
+		static Matrix Add(Matrix const& matrix1, Matrix const& matrix2);
+		static Matrix CreateBillboard(Vector3 const& objectPosition, Vector3 const& cameraPosition,
+			Vector3 const& cameraUpVector, Vector3 const& cameraForwardVector);
 		static Matrix CreateConstrainedBillboard(Vector3 objectPosition, Vector3 cameraPosition,
 			Vector3 rotateAxis, Vector3 cameraForwardVector, Vector3 objectForwardVector);
-		static Matrix CreateFromAxisAngle(Vector3 axis, double angle);
-		static Matrix CreateFromQuaternion(Quaternion quaternion);
+		static Matrix CreateFromAxisAngle(Vector3 const& axis, double const& angle);
+		static Matrix CreateFromQuaternion(Quaternion const& quaternion);
 		static Matrix CreateFromYawPitchRoll(double yaw, double pitch, double roll);
-		static Matrix CreateLookAt(Vector3 cameraPosition, Vector3 cameraTarget, Vector3 cameraUpVector);
+		static Matrix CreateLookAt(Vector3 const& cameraPosition, Vector3 const& cameraTarget, Vector3 const& cameraUpVector);
 		static Matrix CreateOrthographic(double width, double height, double zNearPlane, double zFarPlane);
 		static Matrix CreateOrthographicOffCenter(double left, double right, double bottom, double top, double zNearPlane, double zFarPlane);
 		static Matrix CreatePerspective(double width, double height, double nearPlaneDistance, double farPlaneDistance);
-		static Matrix CreatePerspectiveOffCenter(Rectangle viewingVolume, double nearPlaneDistance, double farPlaneDistance);
+		static Matrix CreatePerspectiveOffCenter(Rectangle const& viewingVolume, double nearPlaneDistance, double farPlaneDistance);
 		static Matrix CreatePerspectiveOffCenter(double left, double right, double bottom, double top, double nearPlaneDistance, double farPlaneDistance);
 		static Matrix CreateRotationX(double radians);
 		static Matrix CreateRotationY(double radians);
 		static Matrix CreateRotationZ(double radians);
 		static Matrix CreateScale(double scale);
 		static Matrix CreateScale(double xScale, double yScale, double zScale);
-		static Matrix CreateScale(Vector3 scales);
-		static Matrix CreateShadow(Vector3 lightDirection, Plane plane);
+		static Matrix CreateScale(Vector3 const& scales);
+		static Matrix CreateShadow(Vector3 const& lightDirection, Plane const& plane);
 		static Matrix CreateTranslation(double xPosition, double yPosition, double zPosition);
-		static Matrix CreateTranslation(Vector3 position, Matrix result);
-		static Matrix CreateTranslation(Vector3 position);
-		static Matrix CreateReflection(Plane value);
-		static Matrix CreateWorld(Vector3 position, Vector3 forward, Vector3 up);		
-		static Matrix Divide(Matrix matrix1, Matrix matrix2);
-		static Matrix Divide(Matrix matrix1, double divider);
-		static Matrix Invert(Matrix matrix);
-		static Matrix Lerp(Matrix matrix1, Matrix matrix2, double amount);
-		static Matrix Multiply(Matrix matrix1, Matrix matrix2);
-		static Matrix Multiply(Matrix matrix1, double scaleFactor);
-		static std::vector<double> TodoubleArray(Matrix matrix);
-		static Matrix Negate(Matrix matrix);
-		static Matrix Subtract(Matrix matrix1, Matrix matrix2);
-		static Matrix Transpose(Matrix matrix);
-		static void FindDeterminants(Matrix matrix,  double major,
-			double minor1,  double minor2,  double minor3,  double minor4,  double minor5,  double minor6,
-			double minor7,  double minor8,  double minor9,  double minor10,  double minor11,  double minor12);
+		static Matrix CreateTranslation(Vector3 const& position);
+		static Matrix CreateReflection(Plane const& value);
+		static Matrix CreateWorld(Vector3 const& position, Vector3 const& forward, Vector3 const& up);
+		static Matrix Divide(Matrix const& matrix1, Matrix const& matrix2);
+		static Matrix Divide(Matrix const& matrix1, double divider);
+		static Matrix Invert(Matrix const& matrix);
+		static Matrix Lerp(Matrix const& matrix1, Matrix const& matrix2, double amount);
+		static Matrix Multiply(Matrix const& matrix1, Matrix const& matrix2);
+		static Matrix Multiply(Matrix const& matrix1, double scaleFactor);
+		static std::vector<double> ToDoubleArray(Matrix const& matrix);
+		static Matrix Negate(Matrix const& matrix);
+		static Matrix Subtract(Matrix const& matrix1, Matrix const& matrix2);
+		static Matrix Transpose(Matrix const& matrix);
 
-		Vector3 Backward();
-		void Backward(Vector3 value);		
-		Vector3 Down();
-		void Down(Vector3 value);
-		Vector3 Forward();
-		void Forward(Vector3 value);	
-		Vector3 Left();
-		void Left(Vector3 value);
-		Vector3 Right();
-		void Right(Vector3 value);
-		Vector3 Translation();
-		void Translation(Vector3 value);
-		Vector3 Up();
+		Vector3 Backward() const;
+		Vector3 Down() const;
+		Vector3 Forward() const;
+		Vector3 Left() const;
+		Vector3 Right() const;
+		Vector3 Up() const;
+		Vector3 Translation() const;
+		
+		void Backward(Vector3 value);				
+		void Down(Vector3 value);		
+		void Forward(Vector3 value);			
+		void Left(Vector3 value);		
+		void Right(Vector3 value);		
+		void Translation(Vector3 value);		
 		void Up(Vector3 value);
-		bool Decompose(Vector3 scale, Quaternion rotation, Vector3 translation);
-		double Determinant();
-		bool Equals(Matrix other);
+		bool Decompose(Vector3& scale, Quaternion& rotation, Vector3& translation) const;
+		double Determinant() const;
+		bool Equals(Matrix const& other) const;
 	};
 }
 
-#endif // !_MATRIX_H_
+#endif

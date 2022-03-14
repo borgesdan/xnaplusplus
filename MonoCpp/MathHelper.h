@@ -86,6 +86,8 @@ namespace Xna {
 
 		//Returns true if the value is infinity and greater then 0.
 		static bool IsPositiveInfinity(double);
+
+		static double MathHelper::Sign(double value);
 	};	
 }
 
