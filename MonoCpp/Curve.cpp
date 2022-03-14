@@ -3,7 +3,8 @@
 #include "Curve.h"
 
 namespace Xna {
-	Curve::Curve(){}
+	Curve::Curve():
+    _preLoop(CurveLoopType::Constant), _postLoop(CurveLoopType::Constant) {}
 
 	// Members
 	bool Curve::IsConstant() const {
@@ -40,18 +41,18 @@ namespace Xna {
 	}
 
 	double Curve::Evaluate(double position) {
-        if (_keys.Count() == 0)
-        {
+        if (_keys.Count() == 0) {
             return 0.;
         }
 
-        if (_keys.Count() == 1)
-        {
+        if (_keys.Count() == 1) {
             return _keys.Get(0).Value();
         }
 
         CurveKey first = _keys.Get(0);
         CurveKey last = _keys.Get(_keys.Count() - 1);
+        long cycle = GetNumberOfCycle(position);
+        double virtualPos = 0.0;
 
         if (position < first.Position()) {
             switch (_preLoop)
@@ -62,18 +63,15 @@ namespace Xna {
             case CurveLoopType::Linear:                
                 return first.Value() - first.TangentIn() * (first.Position() - position);
 
-            case CurveLoopType::Cycle:                
-                long cycle = GetNumberOfCycle(position);
-                float virtualPos = position - (cycle * (last.Position() - first.Position()));
+            case CurveLoopType::Cycle:                                
+                virtualPos = position - (cycle * (last.Position() - first.Position()));
                 return GetCurvePosition(virtualPos);
 
-            case CurveLoopType::CycleOffset:                
-                cycle = GetNumberOfCycle(position);
+            case CurveLoopType::CycleOffset:                                
                 virtualPos = position - (cycle * (last.Position() - first.Position()));
                 return (GetCurvePosition(virtualPos) + cycle * (last.Value() - first.Value()));
 
-            case CurveLoopType::Oscillate:                
-                cycle = GetNumberOfCycle(position);
+            case CurveLoopType::Oscillate:                                
                 if (0 == cycle % 2) {
                     virtualPos = position - (cycle * (last.Position() - first.Position()));
                 }                    
@@ -86,7 +84,7 @@ namespace Xna {
         }
         else if (position > last.Position())
         {
-            int cycle;
+            int cycle = 0;
             switch (_postLoop)
             {
             case CurveLoopType::Constant:                
@@ -95,18 +93,15 @@ namespace Xna {
             case CurveLoopType::Linear:                
                 return last.Value() + first.TangentOut() * (position - last.Position());
 
-            case CurveLoopType::Cycle:
-                cycle = GetNumberOfCycle(position);
-                float virtualPos = position - (cycle * (last.Position() - first.Position()));
+            case CurveLoopType::Cycle:                
+                virtualPos = position - (cycle * (last.Position() - first.Position()));
                 return GetCurvePosition(virtualPos);
 
-            case CurveLoopType::CycleOffset:                
-                cycle = GetNumberOfCycle(position);
+            case CurveLoopType::CycleOffset:                                
                 virtualPos = position - (cycle * (last.Position() - first.Position()));
                 return (GetCurvePosition(virtualPos) + cycle * (last.Value() - first.Value()));
 
-            case CurveLoopType::Oscillate:                
-                cycle = GetNumberOfCycle(position);
+            case CurveLoopType::Oscillate:                                
                 virtualPos = position - (cycle * (last.Position() - first.Position()));
                 if (0 == cycle % 2)
                     virtualPos = position - (cycle * (last.Position() - first.Position()));

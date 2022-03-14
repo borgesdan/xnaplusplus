@@ -42,7 +42,7 @@ namespace Xna {
 
 	// Members
 
-	constexpr Matrix BoundingFrustum::Matrix_() const {
+	Matrix BoundingFrustum::Matrix_() const {
 		return _matrix;
 	}
 
@@ -52,27 +52,27 @@ namespace Xna {
 		CreateCorners();
 	}
 
-	constexpr Plane BoundingFrustum::Near() const {
+	Plane BoundingFrustum::Near() const {
 		return _planes[0];
 	}
 
-	constexpr Plane BoundingFrustum::Far() const {
+	Plane BoundingFrustum::Far() const {
 		return _planes[1];
 	}
 
-	constexpr Plane BoundingFrustum::Left() const {
+	Plane BoundingFrustum::Left() const {
 		return _planes[2];
 	}
 
-	constexpr Plane BoundingFrustum::Right() const {
+	Plane BoundingFrustum::Right() const {
 		return _planes[3];
 	}
 
-	constexpr Plane BoundingFrustum::Top() const {
+	Plane BoundingFrustum::Top() const {
 		return _planes[4];
 	}
 
-	constexpr Plane BoundingFrustum::Bottom() const {
+	Plane BoundingFrustum::Bottom() const {
 		return _planes[5];
 	}
 
@@ -152,7 +152,7 @@ namespace Xna {
 
 		for (long i = 0; i < PlaneCount; ++i)
 		{			
-			if (PlaneHelper::ClassifyPoint(point, _planes[i]) > 0)
+			if (Plane::ClassifyPoint(point, _planes[i]) > 0)
 			{
 				result = ContainmentType::Disjoint;
 				return;

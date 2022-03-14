@@ -33,21 +33,21 @@ namespace Xna {
 		friend bool operator !=(BoundingFrustum a, BoundingFrustum b);
 
 		// Gets or sets the Matrix of the frustum.
-		constexpr Matrix Matrix_() const;
+		Matrix Matrix_() const;
 		// Sets or sets the Matrix of the frustum.
 		void Matrix_(Matrix value);
 		// Gets the near plane of the frustum.
-		constexpr Plane Near() const;
+		Plane Near() const;
 		// Gets the far plane of the frustum.
-		constexpr Plane Far() const;
+		Plane Far() const;
 		// Gets the left plane of the frustum.
-		constexpr Plane Left() const;
+		Plane Left() const;
 		// Gets the right plane of the frustum.
-		constexpr Plane Right() const;
+		Plane Right() const;
 		// Gets the top plane of the frustum.
-		constexpr Plane Top() const;
+		Plane Top() const;
 		// Gets the bottom plane of the frustum.
-		constexpr Plane Bottom() const;
+		Plane Bottom() const;
 
 		// Containment test between this <see cref="BoundingFrustum"/> and specified <see cref="BoundingBox"/>.
 		ContainmentType Contains(BoundingBox const& box) const;

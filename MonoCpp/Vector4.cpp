@@ -23,27 +23,27 @@ namespace Xna {
 	}
 
 	Vector4 operator- (Vector4 const& value1, Vector4 const& value2) {
-		Vector4::Subtract(value1, value2);
+		return Vector4::Subtract(value1, value2);
 	}
 
 	Vector4 operator+ (Vector4 const& value1, Vector4 const& value2) {
-		Vector4::Add(value1, value2);
+		return Vector4::Add(value1, value2);
 	}
 
 	Vector4 operator* (Vector4 const& value1, Vector4 const& value2) {
-		Vector4::Multiply(value1, value2);
+		return Vector4::Multiply(value1, value2);
 	}
 
 	Vector4 operator* (Vector4 const& value1, double scaleFactor) {
-		Vector4::Multiply(value1, scaleFactor);
+		return Vector4::Multiply(value1, scaleFactor);
 	}
 
 	Vector4 operator/ (Vector4 const& value1, Vector4 const& value2) {
-		Vector4::Divide(value1, value2);
+		return Vector4::Divide(value1, value2);
 	}
 
 	Vector4 operator/ (Vector4 const& value1, long divider) {
-		Vector4::Divide(value1, divider);
+		return Vector4::Divide(value1, divider);
 	}
 
 	bool operator== (Vector4 const& value1, Vector4 const& value2) {

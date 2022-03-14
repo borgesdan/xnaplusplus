@@ -65,10 +65,6 @@ namespace Xna {
 		_continuity = value;
 	}
 
-	void CurveKey::Position(double value) {
-		_position = value;
-	}
-
 	void CurveKey::TangentIn(double value) {
 		_tangentIn = value;
 	}

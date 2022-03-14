@@ -142,7 +142,7 @@ namespace Xna {
 		return static_cast<byte>(_packedValue);
 	}
 
-	byte Color::R(byte value) {
+	void Color::R(byte value) {
 		_packedValue = (_packedValue & 0xff00ffff) | value;
 	}
 
@@ -150,7 +150,7 @@ namespace Xna {
 		return static_cast<byte>(_packedValue >> 8);
 	}
 
-	byte Color::G(byte value) {
+	void Color::G(byte value) {
 		_packedValue = (_packedValue & 0xff00ffff) | (static_cast<unsigned long>(value) << 8);
 	}
 
@@ -158,7 +158,7 @@ namespace Xna {
 		return static_cast<byte>(_packedValue >> 16);
 	}
 
-	byte Color::B(byte value) {
+	void Color::B(byte value) {
 		_packedValue = (_packedValue & 0xff00ffff) | (static_cast<unsigned long>(value) << 16);
 	}
 
@@ -166,7 +166,7 @@ namespace Xna {
 		return static_cast<byte>(_packedValue >> 24);
 	}
 
-	byte Color::A(byte value) {
+	void Color::A(byte value) {
 		_packedValue = (_packedValue & 0xff00ffff) | (static_cast<unsigned long>(value) << 24);
 	}
 
@@ -182,7 +182,7 @@ namespace Xna {
 		return _packedValue;
 	}
 
-	long Color::PackedValue(long value) {
+	void Color::PackedValue(long value) {
 		_packedValue = value;
 	}
 
@@ -218,7 +218,7 @@ namespace Xna {
 
 	// Private
 
-	long  Color::constructsColor(Color color, long alpha) {
+	void  Color::constructsColor(Color color, long alpha) {
 
 		long cA = MathHelper::Clamp(alpha, std::numeric_limits<byte>::min(),
 			std::numeric_limits<byte>::max());
@@ -235,7 +235,7 @@ namespace Xna {
 		}
 	}
 
-	long Color::constructsRGB(long r, long g, long b) {
+	void Color::constructsRGB(long r, long g, long b) {
 		if (((r | g | b) & 0xFFFFFF00) != 0) {
 			long _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
 			long _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
@@ -255,7 +255,7 @@ namespace Xna {
 		}
 	}
 
-	long Color::constructsRGBA(long r, long g, long b, long alpha) {
+	void Color::constructsRGBA(long r, long g, long b, long alpha) {
 		if (((r | g | b | alpha) & 0xFFFFFF00) != 0) {
 			long _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
 			long _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());

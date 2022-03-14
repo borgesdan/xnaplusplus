@@ -116,39 +116,27 @@ namespace Xna {
 	};
 
     double Ray::Intersects(BoundingSphere const& sphere) const {
-        // Find the vector between where the ray starts the the sphere's centre
+        
         Vector3 difference = sphere.Center - Position;
 
         double differenceLengthSquared = difference.LengthSquared();
         double sphereRadiusSquared = sphere.Radius * sphere.Radius;
 
-        double distanceAlongRay = 0.0;
-        double result;
-
-        // If the distance between the ray start and the sphere's centre is less than
-        // the radius of the sphere, it means we've intersected. N.B. checking the LengthSquared is faster.
-        if (differenceLengthSquared < sphereRadiusSquared)
-        {
-            result = 0.0;
-            return;
+        double distanceAlongRay = 0.0;        
+        
+        if (differenceLengthSquared < sphereRadiusSquared){
+            return 0.0;
         }
 
-        Vector3.Dot(ref this.Direction, ref difference, out distanceAlongRay);
-        // If the ray is pointing away from the sphere then we don't ever intersect
-        if (distanceAlongRay < 0)
-        {
-            result = nan;
-            return;
+        distanceAlongRay = Vector3::Dot(Direction, difference);
+        
+        if (distanceAlongRay < 0) {
+            return nan;
         }
-
-        // Next we kinda use Pythagoras to check if we are within the bounds of the sphere
-        // if x = radius of sphere
-        // if y = distance between ray position and sphere centre
-        // if z = the distance we've travelled along the ray
-        // if x^2 + z^2 - y^2 < 0, we do not intersect
+        
         float dist = sphereRadiusSquared + distanceAlongRay * distanceAlongRay - differenceLengthSquared;
 
-        result = (dist < 0) ? nan : distanceAlongRay - MathHelper::Sqrt(dist);
+        return (dist < 0) ? nan : distanceAlongRay - MathHelper::Sqrt(dist);
     }
    
     double Ray::Intersects(Plane const& plane) const {
@@ -157,18 +145,15 @@ namespace Xna {
         double result;
 
         if (std::abs(den) < 0.00001) {
-            result = nan;
-            return;
+            return nan;
         }
 
         result = (-plane.D - Vector3::Dot(plane.Normal, Position)) / den;
 
         if (result < 0.0f)
         {
-            if (result < -0.00001f)
-            {
-                result = nan;
-                return;
+            if (result < -0.00001f) {
+                return nan;
             }
 
             result = 0.0f;

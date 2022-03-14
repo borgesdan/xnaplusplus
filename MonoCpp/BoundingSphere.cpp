@@ -99,11 +99,11 @@ namespace Xna {
         // The current bounding sphere is just a good approximation and may not enclose all points.            
         // From: Mathematics for 3D Game Programming and Computer Graphics, Eric Lengyel, Third Edition.
         // Page 218
-        float sqRadius = radius * radius;
+        double sqRadius = radius * radius;
 
         for (const Vector3 pt : points) {
             Vector3 diff = (pt - center);
-            float sqDist = diff.LengthSquared();
+            double sqDist = diff.LengthSquared();
             if (sqDist > sqRadius)
             {
                 float distance = std::sqrt(sqDist); // equal to diff.Length();

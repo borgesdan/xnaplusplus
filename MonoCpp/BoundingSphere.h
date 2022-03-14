@@ -44,7 +44,7 @@ namespace Xna {
 		BoundingSphere Transform(Matrix const& matrix);
 
 		void Deconstruct(Vector3& center, double& radius) const;
-		constexpr bool Equals(BoundingSphere const& other) const;
+		bool Equals(BoundingSphere const& other) const;
 	};
 }
 

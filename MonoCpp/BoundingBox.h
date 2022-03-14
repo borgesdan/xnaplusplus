@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include "ContainmentType.h"
+#include "PlaneIntersectionType.h"
 #include "Vector3.h"
 
 namespace Xna {
@@ -82,7 +83,7 @@ namespace Xna {
 		//Deconstruction method for BoundingBox.
 		void Deconstruct(Vector3& min, Vector3& max) const;
 
-		constexpr bool Equals(BoundingBox const& other) const;
+		bool Equals(BoundingBox const& other) const;
 
 
 	private:

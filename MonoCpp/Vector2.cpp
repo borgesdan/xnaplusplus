@@ -250,7 +250,7 @@ namespace Xna {
 		return v;
 	}
 
-	Vector2 Vector2::Transform(std::vector<Vector2> const& sourceArray, int sourceIndex, Matrix const& matrix, std::vector<Vector2> destinationArray, long destinationIndex, long length) {
+	void Vector2::Transform(std::vector<Vector2> const& sourceArray, int sourceIndex, Matrix const& matrix, std::vector<Vector2> destinationArray, long destinationIndex, long length) {
 		for (int x = 0; x < length; x++)
 		{
 			Vector2 position = sourceArray[static_cast<std::vector<Xna::Vector2, std::allocator<Xna::Vector2>>::size_type>(sourceIndex) + x];
@@ -261,7 +261,7 @@ namespace Xna {
 		}
 	}
 
-	Vector2 Vector2::Transform(std::vector<Vector2> const& sourceArray, int sourceIndex, Quaternion const& rotation, std::vector<Vector2> destinationArray, long destinationIndex, long length) {
+	void Vector2::Transform(std::vector<Vector2> const& sourceArray, int sourceIndex, Quaternion const& rotation, std::vector<Vector2> destinationArray, long destinationIndex, long length) {
 		for (int x = 0; x < length; x++)
 		{
 			Vector2 position = sourceArray[static_cast<std::vector<Xna::Vector2, std::allocator<Xna::Vector2>>::size_type>(sourceIndex) + x];
@@ -276,12 +276,12 @@ namespace Xna {
 		}
 	}
 
-	Vector2 Vector2::Transform(std::vector<Vector2> const& sourceArray, Matrix const& matrix, std::vector<Vector2> destinationArray) {
-		return Vector2::Transform(sourceArray, 0, matrix, destinationArray, 0, sourceArray.size());
+	void Vector2::Transform(std::vector<Vector2> const& sourceArray, Matrix const& matrix, std::vector<Vector2> destinationArray) {
+		Vector2::Transform(sourceArray, 0, matrix, destinationArray, 0, sourceArray.size());
 	}
 
-	Vector2 Vector2::Transform(std::vector<Vector2> const& sourceArray, Quaternion const& rotation, std::vector<Vector2> destinationArray) {
-		return Vector2::Transform(sourceArray, 0, rotation, destinationArray, 0, sourceArray.size());
+	void Vector2::Transform(std::vector<Vector2> const& sourceArray, Quaternion const& rotation, std::vector<Vector2> destinationArray) {
+		Vector2::Transform(sourceArray, 0, rotation, destinationArray, 0, sourceArray.size());
 	}
 
 	Vector2 Vector2::TransformNormal(Vector2 const& normal, Matrix const& matrix) {
@@ -289,7 +289,7 @@ namespace Xna {
 			(normal.X * matrix.M12) + (normal.Y * matrix.M22));
 	}
 
-	Vector2 Vector2::TransformNormal(std::vector<Vector2> const& sourceArray, int sourceIndex, Matrix const& matrix, std::vector<Vector2> destinationArray, long destinationIndex, long length) {
+	void Vector2::TransformNormal(std::vector<Vector2> const& sourceArray, int sourceIndex, Matrix const& matrix, std::vector<Vector2> destinationArray, long destinationIndex, long length) {
 		for (int i = 0; i < length; i++)
 		{
 			Vector2 normal = sourceArray[static_cast<std::vector<Xna::Vector2, std::allocator<Xna::Vector2>>::size_type>(sourceIndex) + i];
@@ -300,7 +300,7 @@ namespace Xna {
 		}
 	}
 
-	Vector2 Vector2::TransformNormal(std::vector<Vector2> const& sourceArray, Matrix const& matrix, std::vector<Vector2> destinationArray) {
+	void Vector2::TransformNormal(std::vector<Vector2> const& sourceArray, Matrix const& matrix, std::vector<Vector2> destinationArray) {
 		for (int i = 0; i < sourceArray.size(); i++)
 		{
 			Vector2 normal = sourceArray[i];

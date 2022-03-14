@@ -1,0 +1,24 @@
+# ninja log v5
+19	762	6689693649568105	MonoCpp/CMakeFiles/MonoGame.dir/MathHelper.cpp.obj	d52fd4cc69138776
+6	1124	6689693653280776	MonoCpp/CMakeFiles/MonoGame.dir/Main.cpp.obj	fa7b49ce03d6cda1
+9	1212	6689693654110653	MonoCpp/CMakeFiles/MonoGame.dir/Rectangle.cpp.obj	d1cbedf85511f06
+1	1382	6689693655910313	MonoCpp/CMakeFiles/MonoGame.dir/Point.cpp.obj	58799af9b0d9d89d
+798	1634	6689693658353271	MonoCpp/CMakeFiles/MonoGame.dir/Quaternion.cpp.obj	ad17628cfbf0115f
+17	1294	6689703006279279	MonoCpp/CMakeFiles/MonoGame.dir/Vector3.cpp.obj	390f4d1e371388f5
+14	1334	6689703006985310	MonoCpp/CMakeFiles/MonoGame.dir/Plane.cpp.obj	9361110f8dce3e12
+8	701	6689706863350682	MonoCpp/CMakeFiles/MonoGame.dir/Vector4.cpp.obj	7c0067aeec9eae38
+5	789	6689706864136992	MonoCpp/CMakeFiles/MonoGame.dir/Matrix.cpp.obj	a97454cc32402c52
+10	823	6689708845426577	MonoCpp/CMakeFiles/MonoGame.dir/Plane.cpp.obj	9361110f8dce3e12
+0	1028	6689714899519879	MonoCpp/CMakeFiles/MonoGame.dir/Point.cpp.obj	58799af9b0d9d89d
+5	1064	6689714899988599	MonoCpp/CMakeFiles/MonoGame.dir/Rectangle.cpp.obj	d1cbedf85511f06
+8	1094	6689714900144777	MonoCpp/CMakeFiles/MonoGame.dir/Vector2.cpp.obj	ba8ec79c042648e6
+11	1172	6689714900926045	MonoCpp/CMakeFiles/MonoGame.dir/Vector4.cpp.obj	7c0067aeec9eae38
+11	652	6689715363970237	MonoCpp/CMakeFiles/MonoGame.dir/Plane.cpp.obj	9361110f8dce3e12
+1	702	6689715364438861	MonoCpp/CMakeFiles/MonoGame.dir/Vector3.cpp.obj	390f4d1e371388f5
+5	714	6689715505877558	MonoCpp/CMakeFiles/MonoGame.dir/Plane.cpp.obj	9361110f8dce3e12
+8	260	6689716156962611	MonoCpp/CMakeFiles/MonoGame.dir/CurveKey.cpp.obj	fc11bb48b2049ecc
+5	718	6689717127035143	MonoCpp/CMakeFiles/MonoGame.dir/Plane.cpp.obj	9361110f8dce3e12
+13	799	6689718932619975	MonoCpp/CMakeFiles/MonoGame.dir/Color.cpp.obj	293c8e146959487e
+10	690	6689722481925335	MonoCpp/CMakeFiles/MonoGame.dir/Ray.cpp.obj	324f46ba1dffa8f2
+11	397	6689729832467083	MonoCpp/CMakeFiles/MonoGame.dir/Curve.cpp.obj	a65d5241abf683e5
+14	496	6689730527265058	MonoCpp/CMakeFiles/MonoGame.dir/Curve.cpp.obj	a65d5241abf683e5

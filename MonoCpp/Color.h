@@ -35,18 +35,18 @@ namespace Xna {
 		static Color FromNonPremultiplied(long r, long g, long b, long a);
 
 		byte R() const;
-		byte R(byte value);
+		void R(byte value);
 		byte G() const;
-		byte G(byte value);
+		void G(byte value);
 		byte B() const;
-		byte B(byte value);
+		void B(byte value);
 		byte A() const;
-		byte A(byte value);
+		void A(byte value);
 
 		Vector3 ToVector3() const;
 		Vector4 ToVector4() const;
 		long PackedValue() const;
-		long PackedValue(long value);
+		void PackedValue(long value);
 		void Deconstruct(byte& r, byte& g, byte& b) const;
 		void Deconstruct(byte& r, byte& g, byte& b, byte& a) const;
 		void Deconstruct(double& r, double& g, double& b) const;
@@ -199,11 +199,11 @@ namespace Xna {
 	private:
 		unsigned long _packedValue;		
 
-		long constructsColor(Color color, long alpha);
+		void constructsColor(Color color, long alpha);
 
-		long constructsRGB(long r, long g, long b);
+		void constructsRGB(long r, long g, long b);
 		
-		long constructsRGBA(long r, long g, long b, long alpha);
+		void constructsRGBA(long r, long g, long b, long alpha);
 	};
 }
 

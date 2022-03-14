@@ -35,7 +35,7 @@ namespace Xna {
 
 	// Static
 
-	BoundingBox BoundingBox::CreateFromPoints(std::vector<Vector3> const& points, int index = 0, int count = -1)
+	BoundingBox BoundingBox::CreateFromPoints(std::vector<Vector3> const& points, int index, int count)
 		throw(std::invalid_argument) {
 
 		if (points.size() == 0) {
@@ -400,7 +400,7 @@ namespace Xna {
 		max = Max;
 	}
 
-	constexpr bool BoundingBox::Equals(BoundingBox const& other) const {
+	bool BoundingBox::Equals(BoundingBox const& other) const {
 		return (Min == other.Min) && (Max == other.Max);
 	}
 }

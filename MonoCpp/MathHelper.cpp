@@ -4,8 +4,8 @@
 namespace Xna {
 
 	double MathHelper::Barycentric(double value1, double value2, double value3, double amount1, double amount2) {
-		return value1 + (value2 - value1) 
-			* amount1 + (value3 - value1) 
+		return value1 + (value2 - value1)
+			* amount1 + (value3 - value1)
 			* amount2;
 	}
 
@@ -55,7 +55,7 @@ namespace Xna {
 			(3 * v2 - 3 * v1 - 2 * t1 - t2) * sSquared +
 			t1 * s +
 			v1;
-		
+
 		return result;
 	}
 
@@ -90,14 +90,14 @@ namespace Xna {
 		return result;
 	}
 
-	double MathHelper::ToDegrees(double radians) {		
+	double MathHelper::ToDegrees(double radians) {
 		return radians * RADIANS_TO_DEGREE;
 	}
 
 	double MathHelper::ToRadians(double degrees) {
 		return degrees * DEGREE_TO_RADIANS;
 	}
-	
+
 	double MathHelper::WrapAngle(double angle) {
 		if ((angle > -Pi) && (angle <= Pi))
 			return angle;
@@ -117,9 +117,66 @@ namespace Xna {
 
 	bool MathHelper::IsPowerOfTwo(long value) {
 		return (value > 0) && ((value & (value - 1)) == 0);
+	}	
+
+	double MathHelper::Sqrt(double value) {
+		return std::sqrt(value);
 	}
 
-	bool  MathHelper::IsPositiveInfinity(double value) {
+	double MathHelper::Pow(double x, double y) {
+		return std::pow(x, y);
+	}
+
+	double MathHelper::Sin(double value) {
+		return std::sin(value);
+	}
+
+	double MathHelper::Cos(double value) {
+		return std::cos(value);
+	}
+
+	double MathHelper::Tan(double value) {
+		return std::tan(value);
+	}
+
+	double MathHelper::Asin(double value) {
+		return std::asin(value);
+	}
+
+	double MathHelper::Acos(double value) {
+		return std::acos(value);
+	}
+
+	double MathHelper::Atan(double value) {
+		return std::atan(value);
+	}
+
+	double MathHelper::Round(double value) {
+		return std::round(value);
+	}
+
+	double MathHelper::Ceiling(double value) {
+		return std::ceil(value);
+	}
+
+	double MathHelper::Floor(double value) {
+		return std::floor(value);
+	}
+
+	bool MathHelper::IsPositiveInfinity(double value) {
 		return isinf(value) && value > 0;
-	}	
+	}
+
+	bool MathHelper::IsNan(double d) {
+		return std::isnan(d);
+	}
+	
+	double MathHelper::Sign(double value) {
+		if (value < 0) {
+			return -1;
+		}			
+
+		return value > 0 ? 1 : 0;			
+	}
+
 }

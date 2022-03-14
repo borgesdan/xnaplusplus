@@ -62,13 +62,13 @@ namespace Xna {
 		static Vector2 Subtract(Vector2 const& value1, Vector2 const& value2);
 		static Vector2 Transform(Vector2 const& position, Matrix const& matrix);
 		static Vector2 Transform(Vector2 const& value, Quaternion const& rotation);
-		static Vector2 Transform(std::vector<Vector2> const& sourceArray, int sourceIndex, Matrix const& matrix, std::vector<Vector2> destinationArray, long destinationIndex, long length);
-		static Vector2 Transform(std::vector<Vector2> const& sourceArray, int sourceIndex, Quaternion const& rotation, std::vector<Vector2> destinationArray, long destinationIndex, long length);
-		static Vector2 Transform(std::vector<Vector2> const& sourceArray, Matrix const& matrix, std::vector<Vector2> destinationArray);
-		static Vector2 Transform(std::vector<Vector2> const& sourceArray, Quaternion const& rotation, std::vector<Vector2> destinationArray);
+		static void Transform(std::vector<Vector2> const& sourceArray, int sourceIndex, Matrix const& matrix, std::vector<Vector2> destinationArray, long destinationIndex, long length);
+		static void Transform(std::vector<Vector2> const& sourceArray, int sourceIndex, Quaternion const& rotation, std::vector<Vector2> destinationArray, long destinationIndex, long length);
+		static void Transform(std::vector<Vector2> const& sourceArray, Matrix const& matrix, std::vector<Vector2> destinationArray);
+		static void Transform(std::vector<Vector2> const& sourceArray, Quaternion const& rotation, std::vector<Vector2> destinationArray);
 		static Vector2 TransformNormal(Vector2 const& normal, Matrix const& matrix);
-		static Vector2 TransformNormal(std::vector<Vector2> const& sourceArray, int sourceIndex, Matrix const& matrix, std::vector<Vector2> destinationArray, long destinationIndex, long length);
-		static Vector2 TransformNormal(std::vector<Vector2> const& sourceArray, Matrix const& matrix, std::vector<Vector2> destinationArray);
+		static void TransformNormal(std::vector<Vector2> const& sourceArray, int sourceIndex, Matrix const& matrix, std::vector<Vector2> destinationArray, long destinationIndex, long length);
+		static void TransformNormal(std::vector<Vector2> const& sourceArray, Matrix const& matrix, std::vector<Vector2> destinationArray);
 		
 		void Ceiling();
 		void Floor();		
