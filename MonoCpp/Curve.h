@@ -1,14 +1,14 @@
 #ifndef CURVE_H
 #define CURVE_H
 
-#include "ICurveEvaluator.h"
 #include "CurveLoopType.h"
 #include "CurveKeyCollection.h"
 #include "CurveTangent.h"
+#include "CSharp.h"
 
 namespace Xna {
 	
-	class Curve : ICurveEvaluator<double> {
+	class Curve {
 
 		CurveLoopType _preLoop;
 		CurveLoopType _postLoop;
@@ -26,14 +26,14 @@ namespace Xna {
 		CurveKeyCollection& Keys();
 
 		Curve Clone() const;
-		double Evaluate(double position) override;
+		double Evaluate(double position);
 		void ComputeTangents(CurveTangent tangentType);
 		void ComputeTangents(CurveTangent tangentInType, CurveTangent tangentOutType);
-		void ComputeTangent(int keyIndex, CurveTangent tangentType);
-		void ComputeTangent(int keyIndex, CurveTangent tangentInType, CurveTangent tangentOutType);
+		void ComputeTangent(size_t keyIndex, CurveTangent tangentType);
+		void ComputeTangent(size_t keyIndex, CurveTangent tangentInType, CurveTangent tangentOutType);
 
 	private:
-		long GetNumberOfCycle(double position);
+		i32 GetNumberOfCycle(double position);
 		double GetCurvePosition(double position);
 	};
 }

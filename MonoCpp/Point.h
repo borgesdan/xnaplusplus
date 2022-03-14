@@ -1,7 +1,7 @@
 #ifndef POINT_H
 #define POINT_H
 
-#include <iostream>
+#include "CSharp.h"
 
 namespace Xna {
 	
@@ -10,13 +10,12 @@ namespace Xna {
 	//Describes a 2D point.
 	//C#: struct Point
 	struct Point {
-		long X;
-		long Y;
+		i32 X;
+		i32 Y;
 
-		Point(long x, long y);
-		Point(long value);
+		Point(i32 x, i32 y);
+		Point(i32 value);
 
-		friend std::ostream& operator<< (std::ostream& os, Point const& o);
 		friend Point operator+ (Point value1, Point value2);
 		friend Point operator- (Point value1, Point value2);
 		friend Point operator* (Point value1, Point value2);
@@ -31,7 +30,7 @@ namespace Xna {
 		Vector2 ToVector2() const;
 
 		//Deconstruction method for point.
-		void Deconstruct(int& x, int& y) const;
+		void Deconstruct(i32& x, i32& y) const;
 		//Compares whether current instance is equal to specified point.
 		bool Equals(Point const& other) const;
 	};

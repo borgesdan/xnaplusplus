@@ -10,8 +10,8 @@
 
 namespace Xna {
 
-	static const Vector3 MaxVector3 = Vector3(std::numeric_limits<double>::max());
-	static const Vector3 MinVector3 = Vector3(std::numeric_limits<double>::min());
+	const Vector3 BoundingBox::MaxVector3 = Vector3(std::numeric_limits<double>::max());
+	const Vector3 BoundingBox::MinVector3 = Vector3(std::numeric_limits<double>::min());
 
 	// Constructors
 
@@ -19,10 +19,6 @@ namespace Xna {
 	BoundingBox::BoundingBox(Vector3 min, Vector3 max):	Min(0), Max(0) {}
 
 	// Operators
-	
-	std::ostream& operator<< (std::ostream& os, BoundingBox const& bb) {
-		return os << "{{Min:" << bb.Min << " Max:" << bb.Max << "}}";
-	}
 
 	bool operator ==(BoundingBox a, BoundingBox b) {
 		return a.Equals(b);
@@ -35,21 +31,20 @@ namespace Xna {
 
 	// Static
 
-	BoundingBox BoundingBox::CreateFromPoints(std::vector<Vector3> const& points, int index, int count)
-		throw(std::invalid_argument) {
+	BoundingBox BoundingBox::CreateFromPoints(std::vector<Vector3> const& points, i32 index, i32 count)	 {
 
 		if (points.size() == 0) {
-			throw std::invalid_argument("The size of the 'points' argument must be greater than 0.");
+			return BoundingBox();
 		}
 
 		if (count == -1) {
-			count = points.size();
+			count = static_cast<i32>(points.size());
 		}
 
 		Vector3 minVec = MaxVector3;
 		Vector3 maxVec = MinVector3;
 
-		for (int i = index; i < count; i++) {
+		for (i32 i = index; i < count; i++) {
 
 			minVec.X = (minVec.X < points[i].X) ? minVec.X : points[i].X;
 			minVec.Y = (minVec.Y < points[i].Y) ? minVec.Y : points[i].Y;
@@ -63,12 +58,10 @@ namespace Xna {
 		return BoundingBox(minVec, maxVec);
 	}
 
-	BoundingBox BoundingBox::CreateFromSphere(BoundingSphere const& sphere) {
+	BoundingBox BoundingBox::CreateFromSphere(BoundingSphere const& sphere) {	
 		
-		BoundingBox result;
 		Vector3 corner(sphere.Radius);
-		result.Min = sphere.Center - corner;
-		result.Max = sphere.Center + corner;
+		return BoundingBox(sphere.Center - corner, sphere.Center + corner);
 	}
 
 	BoundingBox BoundingBox::CreateMerged(BoundingBox const& original, BoundingBox const& additional) {
@@ -112,7 +105,7 @@ namespace Xna {
 	}
 
 	ContainmentType BoundingBox::Contains(BoundingFrustum const& frustum) const {
-		long i;
+		i32 i;
 		ContainmentType contained;
 		auto corners = frustum.GetCorners();
 		auto cornersSize = corners.size();
@@ -288,23 +281,18 @@ namespace Xna {
 		corners[7].Z = Min.Z;
 	}
 
-	bool BoundingBox::Intersects(BoundingBox const& box) const {
-
-		bool result;
+	bool BoundingBox::Intersects(BoundingBox const& box) const {		
 
 		if ((Max.X >= box.Min.X) && (Min.X <= box.Max.X)) {
 			
 			if ((Max.Y < box.Min.Y) || (Min.Y > box.Max.Y))	{
-				result = false;
-				return;
+				return false;
 			}
 
-			result = (Max.Z >= box.Min.Z) && (Min.Z <= box.Max.Z);
-			return;
+			return (Max.Z >= box.Min.Z) && (Min.Z <= box.Max.Z);
 		}
 
-		result = false;
-		return;
+		return false;
 	}
 
 	bool BoundingBox::Intersects(BoundingFrustum const& frustum) const {
@@ -332,9 +320,8 @@ namespace Xna {
 		return squareDistance <= sphere.Radius * sphere.Radius;
 	}
 
-	PlaneIntersectionType BoundingBox::Intersects(Plane const& plane) const {
-		
-		PlaneIntersectionType result;
+	PlaneIntersectionType BoundingBox::Intersects(Plane const& plane) const {		
+
 		Vector3 positiveVertex;
 		Vector3 negativeVertex;
 
@@ -371,8 +358,7 @@ namespace Xna {
 			+ plane.D;
 
 		if (distance > 0) {
-			result = PlaneIntersectionType::Front;
-			return;
+			return PlaneIntersectionType::Front;
 		}
 		
 		distance = plane.Normal.X * positiveVertex.X 
@@ -381,13 +367,10 @@ namespace Xna {
 			+ plane.D;
 		
 		if (distance < 0) {
-			result = PlaneIntersectionType::Back;
-			return;
+			return PlaneIntersectionType::Back;
 		}
 
-		result = PlaneIntersectionType::Intersecting;
-
-		return result;
+		return PlaneIntersectionType::Intersecting;
 	}
 
 	double BoundingBox::Intersects(Ray ray) const {

@@ -23,7 +23,6 @@ namespace Xna {
 		BoundingSphere();
 		BoundingSphere(Vector3 center, double radius);
 
-		friend std::ostream& operator<< (std::ostream& os, BoundingSphere const& bs);
 		friend bool operator == (BoundingSphere a, BoundingSphere b);
 		friend bool operator != (BoundingSphere a, BoundingSphere b);
 

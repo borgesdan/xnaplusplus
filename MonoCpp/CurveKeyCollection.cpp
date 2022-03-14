@@ -1,4 +1,3 @@
-#include <algorithm>
 #include "CurveKeyCollection.h"
 
 namespace Xna {
@@ -13,11 +12,11 @@ namespace Xna {
 		return false;
 	}
 
-	CurveKey& CurveKeyCollection::Get(int index) {
+	CurveKey& CurveKeyCollection::Get(size_t index) {
 		return _keys[index];
 	}
 
-	void CurveKeyCollection::Set(int index, CurveKey value) {
+	void CurveKeyCollection::Set(size_t index, CurveKey value) {
 		if (index >= _keys.size())
 			return;
 
@@ -39,7 +38,7 @@ namespace Xna {
 			return;
 		}
 
-		for (int i = 0; i < _keys.size(); i++)
+		for (i32 i = 0; i < _keys.size(); i++)
 		{
 			if (item.Position() < _keys[i].Position())
 			{
@@ -61,33 +60,35 @@ namespace Xna {
 	}
 
 	bool CurveKeyCollection::Contains(CurveKey item) {
-		//https://www.techiedelight.com/check-vector-contains-given-element-cpp/
-		return std::find(_keys.begin(), _keys.end(), _keys.size()) != _keys.end();
+		return std::find(_keys.begin(), _keys.end(), item) != _keys.end();
+		//return false;
 	}
 
-	void CurveKeyCollection::CopyTo(std::vector<CurveKey>& vec, int vecIndex) const {
+	void CurveKeyCollection::CopyTo(std::vector<CurveKey>& vec, i32 vecIndex) const {
 		for ( ; vecIndex < _keys.size(); vecIndex++) {
 			vec.push_back(_keys[vecIndex]);
 		}
 	}
 
-	int CurveKeyCollection::IndexOf(CurveKey item) {
-		for (int i = 0; i < _keys.size(); i++) {
+	i32 CurveKeyCollection::IndexOf(CurveKey item) {
+		for (size_t i = 0; i < _keys.size(); i++) {
 			if (item == _keys[i]) {
-				return i;
+				return static_cast<i32>(i);
 			}
 		}
+
+		return -1;
 	}
 
-	void CurveKeyCollection::RemoveAt(int index) {
+	void CurveKeyCollection::RemoveAt(i32 index) {
 		std::vector<CurveKey>::iterator it = _keys.begin();
 		_keys.erase(it + index);
 	}
 
 	bool CurveKeyCollection::Remove(CurveKey item) {
-		for (int i = 0; i < _keys.size(); i++) {
+		for (size_t i = 0; i < _keys.size(); i++) {
 			if (item == _keys[i]) {
-				RemoveAt(i);
+				RemoveAt(static_cast<i32>(i));
 				return true;
 			}
 		}

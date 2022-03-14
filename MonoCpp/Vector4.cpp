@@ -42,7 +42,7 @@ namespace Xna {
 		return Vector4::Divide(value1, value2);
 	}
 
-	Vector4 operator/ (Vector4 const& value1, long divider) {
+	Vector4 operator/ (Vector4 const& value1, i32 divider) {
 		return Vector4::Divide(value1, divider);
 	}
 
@@ -271,10 +271,10 @@ namespace Xna {
 
 	}
 
-	void Vector4::Transform(std::vector<Vector4> const& sourceArray, int sourceIndex,
-		Matrix& matrix, std::vector<Vector4>& destinationArray, int destinationIndex, int length) {
+	void Vector4::Transform(std::vector<Vector4> const& sourceArray, i32 sourceIndex,
+		Matrix& matrix, std::vector<Vector4>& destinationArray, i32 destinationIndex, i32 length) {
 
-		for (int i = 0; i < length; i++)
+		for (i32 i = 0; i < length; i++)
 		{
 			//Vector4 value = sourceArray[sourceIndex + i];
 			//destinationArray[destinationIndex + i] = Transform(value, matrix);
@@ -286,7 +286,7 @@ namespace Xna {
 
 	void Vector4::Transform(std::vector<Vector4> const& sourceArray, Matrix& matrix, std::vector<Vector4>& destinationArray) {
 
-		for (int i = 0; i < sourceArray.size(); i++)
+		for (i32 i = 0; i < sourceArray.size(); i++)
 		{
 			Vector4 value = sourceArray[i];
 			destinationArray[i] = Transform(value, matrix);

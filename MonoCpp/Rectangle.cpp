@@ -6,7 +6,7 @@ namespace Xna {
 	
 	Rectangle::Rectangle(): X(0), Y(0), Width(0), Height(0) {}
 
-	Rectangle::Rectangle(long x, long y, long width, long height) :
+	Rectangle::Rectangle(i32 x, i32 y, i32 width, i32 height) :
 		X(x), Y(y), Width(width), Height(height) {}
 
 	Rectangle::Rectangle(Point location, Point size) :
@@ -14,10 +14,6 @@ namespace Xna {
 		Width(size.X), Height(size.Y) {}
 
 	//operator
-
-	std::ostream& operator<< (std::ostream& os, Rectangle const& obj) {
-		return os << "{X:" << obj.X << " Y:" << obj.Y << " Width:" << obj.Width << " Height:" << obj.Height + "}";
-	}
 
 	bool operator== (Rectangle a, Rectangle b) {
 		return a.Equals(b);
@@ -37,10 +33,10 @@ namespace Xna {
 		
 		if (value1.Intersects(value2)) {
 
-			long right_side = static_cast<long>(fmin(value1.X + value1.Width, value2.X + value2.Width));
-			long left_side = static_cast<long>(fmin(value1.X, value2.X));
-			long top_side = static_cast<long>(fmin(value1.Y, value2.Y));
-			long bottom_side = static_cast<long>(fmin(value1.Y + value1.Height, value2.Y + value2.Height));
+			i32 right_side = static_cast<long>(fmin(value1.X + value1.Width, value2.X + value2.Width));
+			i32 left_side = static_cast<long>(fmin(value1.X, value2.X));
+			i32 top_side = static_cast<long>(fmin(value1.Y, value2.Y));
+			i32 bottom_side = static_cast<long>(fmin(value1.Y + value1.Height, value2.Y + value2.Height));
 			return Rectangle(left_side, top_side, right_side - left_side, bottom_side - top_side);
 		}
 
@@ -48,8 +44,8 @@ namespace Xna {
 	}
 
 	Rectangle Rectangle::Union(Rectangle const& value1, Rectangle const& value2) {
-		int x = static_cast<long>(fmin(value1.X, value2.X));
-		int y = static_cast<long>(fmin(value1.Y, value2.Y));
+		i32 x = static_cast<long>(fmin(value1.X, value2.X));
+		i32 y = static_cast<long>(fmin(value1.Y, value2.Y));
 
 		return Rectangle(x, y,
 			static_cast<long>(fmax(value1.Right(), value2.Right())) - x,
@@ -58,19 +54,19 @@ namespace Xna {
 
 	//members
 
-	long Rectangle::Left() const {
+	i32 Rectangle::Left() const {
 		return X;
 	}
 
-	long Rectangle::Right() const {
+	i32 Rectangle::Right() const {
 		return X + Width;
 	}
 
-	long Rectangle::Top() const {
+	i32 Rectangle::Top() const {
 		return Y;
 	}
 
-	long Rectangle::Bottom() const {
+	i32 Rectangle::Bottom() const {
 		return Y + Height;
 	}
 
@@ -103,14 +99,14 @@ namespace Xna {
 		return Point(X + (Width / 2), Y + (Height / 2));
 	}
 
-	bool Rectangle::Contains(long x, long y) const {
+	bool Rectangle::Contains(i32 x, i32 y) const {
 		return (X <= x && x < (X + Width))
 			&& (Y <= y && y < (Y + Height));
 	}
 
 	bool Rectangle::Contains(double x, double y) const {
-		long _x = static_cast<long>(x);
-		long _y = static_cast<long>(y);
+		i32 _x = static_cast<long>(x);
+		i32 _y = static_cast<long>(y);
 		
 		return Contains(_x, _y);
 	}
@@ -124,7 +120,7 @@ namespace Xna {
 			&& (Y <= value.Y)) && ((value.Y + value.Height) <= (Y + Height)));
 	}
 
-	void Rectangle::Inflate(long horizontalAmount, long verticalAmount) {
+	void Rectangle::Inflate(i32 horizontalAmount, i32 verticalAmount) {
 		X -= horizontalAmount;
 		Y -= verticalAmount;
 		Width += horizontalAmount * 2;
@@ -132,8 +128,8 @@ namespace Xna {
 	}
 
 	void Rectangle::Inflate(double horizontalAmount, double verticalAmount) {
-		long ha = static_cast<long>(horizontalAmount);
-		long va = static_cast<long>(verticalAmount);
+		i32 ha = static_cast<long>(horizontalAmount);
+		i32 va = static_cast<long>(verticalAmount);
 		Inflate(ha, va);
 	}
 
@@ -144,14 +140,14 @@ namespace Xna {
 			&& Top() < value.Bottom();
 	}
 
-	void Rectangle::Offset(long offsetX, long offsetY) {
+	void Rectangle::Offset(i32 offsetX, i32 offsetY) {
 		X += offsetX;
 		Y += offsetY;
 	}
 
 	void Rectangle::Offset(double offsetX, double offsetY) {
-		long x = static_cast<long>(offsetX);
-		long y = static_cast<long>(offsetY);
+		i32 x = static_cast<long>(offsetX);
+		i32 y = static_cast<long>(offsetY);
 		Offset(x, y);
 	}
 

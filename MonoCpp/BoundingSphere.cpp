@@ -1,5 +1,4 @@
 #include <numeric>
-#include <stdexcept>
 #include <cmath>
 
 #include "BoundingBox.h"
@@ -10,15 +9,11 @@
 
 namespace Xna {
 
-	BoundingSphere::BoundingSphere() {}
+	BoundingSphere::BoundingSphere() : Center(0), Radius(0) {}
 	BoundingSphere::BoundingSphere(Vector3 center, double radius):
 		Center(center), Radius(radius){}
 
 	// Operators
-
-    std::ostream& operator<< (std::ostream& os, BoundingSphere const& bs) {
-        return os << "{Center:" << bs.Center << " Radius:" << bs.Radius << "}";
-    }
 
     bool operator == (BoundingSphere a, BoundingSphere b) {
         return a.Equals(b);
@@ -33,13 +28,7 @@ namespace Xna {
 		return CreateFromPoints(frustum.GetCorners());
 	}
 
-	BoundingSphere BoundingSphere::CreateFromPoints(std::vector<Vector3> const& points)
-            throw(std::invalid_argument) {
-
-        //if (points == null)
-        //    throw new ArgumentNullException("points");
-
-        // From "Real-Time Collision Detection" (Page 89)
+	BoundingSphere BoundingSphere::CreateFromPoints(std::vector<Vector3> const& points)  {
 
         Vector3 minx = Vector3(std::numeric_limits<double>::max());
 
@@ -50,9 +39,9 @@ namespace Xna {
         Vector3 maxz = -minx;
 
         // Find the most extreme points along the principle axis.
-        long numPoints = 0;
+        i32 numPoints = 0;
 
-        for (const Vector3 pt : points) {
+        for (Vector3 const& pt : points) {
 
             ++numPoints;
 
@@ -101,12 +90,12 @@ namespace Xna {
         // Page 218
         double sqRadius = radius * radius;
 
-        for (const Vector3 pt : points) {
+        for (Vector3 const& pt : points) {
             Vector3 diff = (pt - center);
             double sqDist = diff.LengthSquared();
             if (sqDist > sqRadius)
             {
-                float distance = std::sqrt(sqDist); // equal to diff.Length();
+                double distance = std::sqrt(sqDist); // equal to diff.Length();
                 Vector3 direction = diff / distance;
                 Vector3 G = center - radius * direction;
                 center = (G + pt) / 2;
@@ -118,32 +107,28 @@ namespace Xna {
         return BoundingSphere(center, radius);
 	}
 
-    BoundingSphere BoundingSphere::CreateMerged(BoundingSphere const& original, BoundingSphere const& additional) {
+    BoundingSphere BoundingSphere::CreateMerged(BoundingSphere const& original, BoundingSphere const& additional) {       
         
-        BoundingSphere result;
         Vector3 ocenterToaCenter = Vector3::Subtract(additional.Center, original.Center);
-        float distance = ocenterToaCenter.Length();
+        double distance = ocenterToaCenter.Length();
 
-        if (distance <= original.Radius + additional.Radius)//intersect
+        if (distance <= original.Radius + additional.Radius)
         {
-            if (distance <= original.Radius - additional.Radius)//original contain additional
-            {
-                result = original;
-                return;
+            if (distance <= original.Radius - additional.Radius) {
+                return original;
             }
-            if (distance <= additional.Radius - original.Radius)//additional contain original
-            {
-                result = additional;
-                return;
+            if (distance <= additional.Radius - original.Radius)  {
+                return additional;
             }
         }
-        //else find center of new sphere and radius        
+        
         double leftRadius = std::fmax(original.Radius - distance, additional.Radius);
         double Rightradius = std::fmax(original.Radius + distance, additional.Radius);
         ocenterToaCenter = ocenterToaCenter + (((leftRadius - Rightradius) 
             / (2 * ocenterToaCenter.Length())) 
             * ocenterToaCenter);//oCenterToResultCenter
 
+        BoundingSphere result;
         result.Center = original.Center + ocenterToaCenter;
         result.Radius = (leftRadius + Rightradius) / 2;
 
@@ -168,7 +153,7 @@ namespace Xna {
     ContainmentType BoundingSphere::Contains(BoundingBox const& box) const {
         //check if all corner is in sphere
         bool inside = true;
-        for(Vector3 corner : box.GetCorners()) {
+        for(Vector3 const& corner : box.GetCorners()) {
             if (Contains(corner) == ContainmentType::Disjoint) {
                 inside = false;
                 break;
@@ -212,7 +197,7 @@ namespace Xna {
         bool inside = true;
         auto corners = frustum.GetCorners();
 
-        for(Vector3 corner : corners) {
+        for(Vector3 const& corner : corners) {
             if (Contains(corner) == ContainmentType::Disjoint) {
                 inside = false;
                 break;

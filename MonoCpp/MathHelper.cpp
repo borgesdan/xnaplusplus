@@ -25,7 +25,7 @@ namespace Xna {
 		return value;
 	}
 
-	long MathHelper::Clamp(long value, long min, long max) {
+	i32 MathHelper::Clamp(i32 value, i32 min, i32 max) {
 		value = (value > max) ? max : value;
 		value = (value < min) ? min : value;
 		return value;
@@ -71,7 +71,7 @@ namespace Xna {
 		return value1 > value2 ? value1 : value2;
 	}
 
-	long MathHelper::Max(long value1, long value2) {
+	i32 MathHelper::Max(i32 value1, i32 value2) {
 		return value1 > value2 ? value1 : value2;
 	}
 
@@ -79,12 +79,12 @@ namespace Xna {
 		return value1 < value2 ? value1 : value2;
 	}
 
-	long MathHelper::Min(long value1, long value2) {
+	i32 MathHelper::Min(i32 value1, i32 value2) {
 		return value1 < value2 ? value1 : value2;
 	}
 
 	double MathHelper::SmoothStep(double value1, double value2, double amount) {
-		double result = Clamp(amount, 0, 1.0);
+		double result = Clamp(amount, 0.0, 1.0);
 		result = Hermite(value1, 0, value2, 0, result);
 
 		return result;
@@ -115,7 +115,7 @@ namespace Xna {
 		return angle;
 	}
 
-	bool MathHelper::IsPowerOfTwo(long value) {
+	bool MathHelper::IsPowerOfTwo(i32 value) {
 		return (value > 0) && ((value & (value - 1)) == 0);
 	}	
 

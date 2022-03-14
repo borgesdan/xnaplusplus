@@ -81,7 +81,7 @@ namespace Xna {
 		return CurveKey(_position, _value, _tangentIn, _tangentOut, _continuity);
 	}
 
-	int CurveKey::CompareTo(CurveKey other) const {
+	i32 CurveKey::CompareTo(CurveKey other) const {
 		if (_position < other._position) return -1;
 		if (_position > other._position) return 1;
 		if (_position == other._position) return 0;
@@ -96,10 +96,10 @@ namespace Xna {
 	}
 
 	bool CurveKey::Equals(CurveKey other) const {
-		return (_position == other._position)
-			&& (_value == other._value)
-			&& (_tangentIn == other._tangentIn)
-			&& (_tangentOut == other._tangentOut)
-			&& (_continuity == other._continuity);
+		return _position == other._position
+			&& _value == other._value
+			&& _tangentIn == other._tangentIn
+			&& _tangentOut == other._tangentOut
+			&& _continuity == other._continuity;
 	}
 }

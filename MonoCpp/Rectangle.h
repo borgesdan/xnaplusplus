@@ -1,7 +1,7 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
-#include <iostream>
+#include "CSharp.h"
 
 namespace Xna {		
 
@@ -12,16 +12,15 @@ namespace Xna {
 	//C#: struct Rectangle
 	struct Rectangle {		
 
-		long X;		
-		long Y;		
-		long Width;		
-		long Height;
+		i32 X;		
+		i32 Y;		
+		i32 Width;		
+		i32 Height;
 
 		Rectangle();
-		Rectangle(long x, long y, long width, long height);
+		Rectangle(i32 x, i32 y, i32 width, i32 height);
 		Rectangle(Point location, Point size);
 
-		friend std::ostream& operator<< (std::ostream& os, Rectangle const& obj);
 		friend bool operator== (Rectangle, Rectangle);
 		friend bool operator!= (Rectangle, Rectangle);
 
@@ -35,13 +34,13 @@ namespace Xna {
 		static Rectangle Union(Rectangle const&, Rectangle const&);
 
 		//Returns the x coordinate of the left edge.
-		long Left() const;
+		i32 Left() const;
 		//Returns the x coordinate of the right edge.
-		long Right() const;
+		i32 Right() const;
 		//Returns the y coordinate of the top edge.
-		long Top() const;
+		i32 Top() const;
 		//Returns the y coordinate of the bottom edge.
-		long Bottom() const;
+		i32 Bottom() const;
 		//If this rectangle is with X=0, Y=0, Width=0, Height=0.
 		bool IsEmpty() const;
 		
@@ -57,20 +56,20 @@ namespace Xna {
 		Point Center() const;
 
 		//Gets whether or not the provided coordinates lie within the bounds.
-		bool Contains(long x, long y) const;
+		bool Contains(i32 x, i32 y) const;
 		bool Contains(double x, double y) const;
 		bool Contains(Point const& value) const;
 		bool Contains(Rectangle const& value) const;		
 
 		//Adjusts the edges of this rectangle by specified horizontal and vertical amounts.
-		void Inflate(long horizontalAmount, long verticalAmount);
+		void Inflate(i32 horizontalAmount, i32 verticalAmount);
 		void Inflate(double horizontalAmount, double verticalAmount);
 
 		//Gets whether or not the other rectangle intersects with this rectangle.
 		bool Intersects(Rectangle const& value) const;		
 
 		//Changes the location of this rectangle..
-		void Offset(long offsetX, long offsetY);
+		void Offset(i32 offsetX, i32 offsetY);
 		void Offset(double offsetX, double offsetY);
 		void Offset(Point const& amount);		
 		void Offset(Vector2 const& amount);		

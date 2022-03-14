@@ -32,7 +32,7 @@ namespace Xna {
 
 	//----- Operators
 
-	double& Matrix::operator[] (long index) {
+	double& Matrix::operator[] (i32 index) {
 
 		switch (index)
 		{
@@ -58,8 +58,8 @@ namespace Xna {
 
 	double& Matrix::operator[] (Point row_col) {
 
-		long row = row_col.X;
-		long column = row_col.Y;
+		i32 row = row_col.X;
+		i32 column = row_col.Y;
 		return (*this)[(row * 4) + column];
 	}
 
@@ -675,7 +675,7 @@ namespace Xna {
 	Matrix Matrix::Divide(Matrix const& matrix1, double divider) {
 		Matrix result;
 		
-		float num = 1.0 / divider;
+		double num = 1.0 / divider;
 		result.M11 = matrix1.M11 * num;
 		result.M12 = matrix1.M12 * num;
 		result.M13 = matrix1.M13 * num;

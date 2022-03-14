@@ -2,7 +2,6 @@
 #define BOUNDINGBOX_H
 
 #include <vector>
-#include <iostream>
 #include "ContainmentType.h"
 #include "PlaneIntersectionType.h"
 #include "Vector3.h"
@@ -18,7 +17,7 @@ namespace Xna {
 	struct BoundingBox {
 
 		//The number of corners in a BoundingBox. This is equal to 8.
-		static constexpr long CornerCount = 8;
+		static constexpr i32 CornerCount = 8;
 
 		// The minimum extent of this BoundingBox.
 		Vector3 Min;
@@ -30,7 +29,6 @@ namespace Xna {
 		//Create a BoundingBox with the minimum and the maxmum extent.
 		BoundingBox(Vector3 min, Vector3 max);
 
-		friend std::ostream& operator<< (std::ostream& os, BoundingBox const& bb);
 		friend bool operator ==(BoundingBox a, BoundingBox b);
 		friend bool operator !=(BoundingBox a, BoundingBox b);
 
@@ -38,7 +36,7 @@ namespace Xna {
 		// points: The array of Vector3 instances defining the point cloud to bound.
 		// index: The base index to start iterating from.
 		// count: The number of points to iterate.
-		static BoundingBox CreateFromPoints(std::vector<Vector3> const& points, int index = 0, int count = -1);
+		static BoundingBox CreateFromPoints(std::vector<Vector3> const& points, i32 index = 0, i32 count = -1);
 
 		// Create the enclosing BoundingBox of a BoundingSphere.
 		static BoundingBox CreateFromSphere(BoundingSphere const& sphere);

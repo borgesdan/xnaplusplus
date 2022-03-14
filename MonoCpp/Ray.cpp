@@ -13,10 +13,6 @@ namespace Xna {
 
 	Ray::Ray(Vector3 position, Vector3 direction) :
 		Position(position), Direction(direction) {}
-
-    std::ostream& operator<< (std::ostream& os, Ray const& o) {
-        return os << "{{Position:" << o.Position << " Direction:" << o.Direction << "}}";
-    }
 	
 	bool operator !=(Ray a, Ray b) {
 		return a.Equals(b);
@@ -134,7 +130,7 @@ namespace Xna {
             return nan;
         }
         
-        float dist = sphereRadiusSquared + distanceAlongRay * distanceAlongRay - differenceLengthSquared;
+        double dist = sphereRadiusSquared + distanceAlongRay * distanceAlongRay - differenceLengthSquared;
 
         return (dist < 0) ? nan : distanceAlongRay - MathHelper::Sqrt(dist);
     }

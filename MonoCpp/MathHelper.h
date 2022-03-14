@@ -1,7 +1,8 @@
-#ifndef _MATHHELPER_H_
-#define _MATHHELPER_H_
+#ifndef MATHHELPER_H
+#define MATHHELPER_H
 
 #include <limits>
+#include "CSharp.h"
 
 namespace Xna {
 
@@ -30,7 +31,7 @@ namespace Xna {
 		// Restricts a value to be within a specified range.
 		static double Clamp(double, double, double);
 		// Restricts a value to be within a specified range.
-		static long Clamp(long, long, long);
+		static i32 Clamp(i32, i32, i32);
 		// Calculates the absolute value of the difference of two values.
 		static double Distance(double, double);
 		// Performs a Hermite spline interpolation.
@@ -43,11 +44,11 @@ namespace Xna {
 		// Returns the greater of two values.
 		static double Max(double, double);
 		// Returns the greater of two values.
-		static long Max(long, long);
+		static i32 Max(i32, i32);
 		// Returns the lesser of two values.
 		static double Min(double, double);
 		// Returns the lesser of two values.
-		static long Min(long, long);
+		static i32 Min(i32, i32);
 		// Interpolates between two values using a cubic equation.
 		static double SmoothStep(double, double, double);
 		// Converts radians to degrees.
@@ -57,7 +58,7 @@ namespace Xna {
 		// Reduces a given angle to a value between pi and -pi.
 		static double WrapAngle(double); 
 		// Determines if value is powered by two.
-		static bool IsPowerOfTwo(long);
+		static bool IsPowerOfTwo(i32);
 
 		//----- C#: MathF.cs methods
 

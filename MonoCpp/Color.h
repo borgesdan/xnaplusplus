@@ -1,8 +1,7 @@
 #ifndef COLOR_H
 #define COLOR_H
 
-#include <iostream>
-#include "CSharp.h" // unsigned char as byte
+#include "CSharp.h"
 
 namespace Xna {
 
@@ -11,18 +10,17 @@ namespace Xna {
 
 	struct Color {		
 
-		Color(unsigned long packedValue);
+		Color(u32 packedValue);
 		Color(Vector4 color);
 		Color(Vector3 color);
-		Color(Color color, long alpha);
+		Color(Color color, i32 alpha);
 		Color(Color color, double alpha);
 		Color(double r, double g, double b);
 		Color(double r, double g, double b, double alpha);
-		Color(long r, long g, long b);
-		Color(long r, long g, long b, long alpha);
+		Color(i32 r, i32 g, i32 b);
+		Color(i32 r, i32 g, i32 b, i32 alpha);
 		Color(byte r, byte g, byte b, byte alpha);
 
-		friend std::ostream& operator<< (std::ostream& os, Color const& cl);
 		friend bool operator ==(Color const& a, Color const& b);
 		friend bool operator !=(Color const& a, Color const& b);
 		friend Color operator *(Color const& value, double scale);
@@ -32,7 +30,7 @@ namespace Xna {
 		static Color LerpPrecise(Color const& value1, Color const& value2, short amount);
 		static Color Multiply(Color const& value, double const& scale);
 		static Color FromNonPremultiplied(Vector4 const& vector);
-		static Color FromNonPremultiplied(long r, long g, long b, long a);
+		static Color FromNonPremultiplied(i32 r, i32 g, i32 b, i32 a);
 
 		byte R() const;
 		void R(byte value);
@@ -45,8 +43,8 @@ namespace Xna {
 
 		Vector3 ToVector3() const;
 		Vector4 ToVector4() const;
-		long PackedValue() const;
-		void PackedValue(long value);
+		i32 PackedValue() const;
+		void PackedValue(i32 value);
 		void Deconstruct(byte& r, byte& g, byte& b) const;
 		void Deconstruct(byte& r, byte& g, byte& b, byte& a) const;
 		void Deconstruct(double& r, double& g, double& b) const;
@@ -197,13 +195,13 @@ namespace Xna {
 		static const Color YellowGreen;
 
 	private:
-		unsigned long _packedValue;		
+		u32 _packedValue;		
 
-		void constructsColor(Color color, long alpha);
+		void constructsColor(Color color, i32 alpha);
 
-		void constructsRGB(long r, long g, long b);
+		void constructsRGB(i32 r, i32 g, i32 b);
 		
-		void constructsRGBA(long r, long g, long b, long alpha);
+		void constructsRGBA(i32 r, i32 g, i32 b, i32 alpha);
 	};
 }
 

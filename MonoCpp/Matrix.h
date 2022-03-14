@@ -2,6 +2,7 @@
 #define MATRIX_H
 
 #include <vector>
+#include "CSharp.h"
 
 namespace Xna {
 
@@ -41,7 +42,7 @@ namespace Xna {
 		Matrix(Vector4 row1, Vector4 row2, Vector4 row3, Vector4 row4);		
 
 		//Se for um número fora de 0 a 15 retornará M11.
-		double& operator[] (long index);
+		double& operator[] (i32 index);
 		double& operator[] (Point row_col);
 		Matrix operator- (Matrix matrix);
 		friend Matrix operator+ (Matrix matrix1, Matrix matrix2);

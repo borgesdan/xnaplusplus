@@ -2,6 +2,7 @@
 #define CURVE_KEY_H
 
 #include "CurveContinuity.h"
+#include "CSharp.h"
 
 namespace Xna {
 
@@ -65,7 +66,7 @@ namespace Xna {
 		// Creates a copy of this key.
 		CurveKey Clone();
 		
-		int CurveKey::CompareTo(CurveKey other) const;
+		i32 CurveKey::CompareTo(CurveKey other) const;
 		bool Equals(CurveKey other) const;
 	};
 }

@@ -2,6 +2,7 @@
 #define VECTOR4_H
 
 #include <vector>
+#include "CSharp.h"
 
 namespace Xna {
 
@@ -40,7 +41,7 @@ namespace Xna {
 		friend Vector4 operator* (Vector4 const& value1, Vector4 const& value2);
 		friend Vector4 operator* (Vector4 const& value1, double scaleFactor);
 		friend Vector4 operator/ (Vector4 const& value1, Vector4 const& value2);
-		friend Vector4 operator/ (Vector4 const& value1, long divider);
+		friend Vector4 operator/ (Vector4 const& value1, i32 divider);
 		friend bool operator== (Vector4 const& value1, Vector4 const& value2);
 		friend bool operator!= (Vector4 const& value1, Vector4 const& value2);
 
@@ -110,7 +111,7 @@ namespace Xna {
 		// Creates a new Vector4 that contains a transformation of 4d-vector by the specified Matrix.
 		static Vector4 Transform(Vector4 const& value, Matrix const& matrix);
 		// Apply transformation on vectors within array of Vector4 by the specified Matrix and places the results in an another array.
-		static void Transform(std::vector<Vector4> const& sourceArray, int sourceIndex,	Matrix& matrix, std::vector<Vector4>& destinationArray, int destinationIndex, int length);
+		static void Transform(std::vector<Vector4> const& sourceArray, i32 sourceIndex,	Matrix& matrix, std::vector<Vector4>& destinationArray, i32 destinationIndex, i32 length);
 		// Apply transformation on all vectors within array of Vector4 by the specified Matrix and places the results in an another array.
 		static void Transform(std::vector<Vector4> const& sourceArray, Matrix& matrix, std::vector<Vector4>& destinationArray);		
 
@@ -138,7 +139,7 @@ namespace Xna {
 		// static Vector4 Transform(Vector4 const& value, Quaternion const& rotation);
 		
 		// This methods call Transform(Vector4, Quaternion) in its implementation
-		// static void Transform(std::vector<Vector4> const& sourceArray, int sourceIndex, Quaternion& rotation, std::vector<Vector4>& destinationArray, int destinationIndex, int length);
+		// static void Transform(std::vector<Vector4> const& sourceArray, i32 sourceIndex, Quaternion& rotation, std::vector<Vector4>& destinationArray, i32 destinationIndex, i32 length);
 		// static void Transform(std::vector<Vector4> const& sourceArray, Quaternion& matrix, std::vector<Vector4>& destinationArray);	
 	};
 }

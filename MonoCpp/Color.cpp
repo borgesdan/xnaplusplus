@@ -6,67 +6,64 @@
 
 namespace Xna {
 
-	Color::Color(unsigned long packedValue) : _packedValue(packedValue) {}
+	Color::Color(u32 packedValue) : _packedValue(packedValue) {}
 
 	Color::Color(Vector4 color) {
 		constructsRGBA(
-			static_cast<long>(color.X * 255),
-			static_cast<long>(color.Y * 255),
-			static_cast<long>(color.Z * 255),
-			static_cast<long>(color.W * 255)
+			static_cast<i32>(color.X * 255),
+			static_cast<i32>(color.Y * 255),
+			static_cast<i32>(color.Z * 255),
+			static_cast<i32>(color.W * 255)
 		);
 	}
 
 	Color::Color(Vector3 color) {
 		constructsRGB(
-			static_cast<long>(color.X * 255),
-			static_cast<long>(color.Y * 255),
-			static_cast<long>(color.Z * 255));
+			static_cast<i32>(color.X * 255),
+			static_cast<i32>(color.Y * 255),
+			static_cast<i32>(color.Z * 255));
 	}
 
-	Color::Color(Color color, long alpha) {
+	Color::Color(Color color, i32 alpha) {
 		constructsColor(color, alpha);
 	}
 
 	Color::Color(Color color, double alpha) {
-		constructsColor(color, static_cast<long>(alpha * 255));
+		constructsColor(color, static_cast<i32>(alpha * 255));
 	}
 
 	Color::Color(double r, double g, double b) {
 		constructsRGB(
-			static_cast<long>(r * 255),
-			static_cast<long>(g * 255),
-			static_cast<long>(b * 255));
+			static_cast<i32>(r * 255),
+			static_cast<i32>(g * 255),
+			static_cast<i32>(b * 255));
 	}
 
 	Color::Color(double r, double g, double b, double alpha) {
 		constructsRGBA(
-			static_cast<long>(r * 255),
-			static_cast<long>(g * 255),
-			static_cast<long>(b * 255),
-			static_cast<long>(alpha * 255)
+			static_cast<i32>(r * 255),
+			static_cast<i32>(g * 255),
+			static_cast<i32>(b * 255),
+			static_cast<i32>(alpha * 255)
 		);
 	}
 
-	Color::Color(long r, long g, long b) {
+	Color::Color(i32 r, i32 g, i32 b) {
 		constructsRGB(r, g, b);
 	}
 
-	Color::Color(long r, long g, long b, long alpha) {
+	Color::Color(i32 r, i32 g, i32 b, i32 alpha) {
 		constructsRGBA(r, g, b, alpha);
 	}
 
 	Color::Color(byte r, byte g, byte b, byte alpha) {
-		_packedValue = static_cast<unsigned long>(alpha << 24)
-			| static_cast<unsigned long>(b << 16)
-			| static_cast<unsigned long>(g << 8)
+		_packedValue = static_cast<u32>(alpha << 24)
+			| static_cast<u32>(b << 16)
+			| static_cast<u32>(g << 8)
 			| (r);
 	}
 
 	// Operators
-	std::ostream& operator<< (std::ostream& os, Color const& cl) {
-		return os << "{R:" << cl.R() << "{G:" << cl.G() << "{B:" << cl.B() << "{A:" << cl.A();
-	}
 	
 	bool operator ==(Color const& a, Color const& b) {
 		return a.Equals(b);
@@ -78,18 +75,18 @@ namespace Xna {
 
 	Color operator *(Color const& value, double scale) {
 		return Color(
-			static_cast<long>(value.R() * scale),
-			static_cast<long>(value.G() * scale),
-			static_cast<long>(value.B() * scale),
-			static_cast<long>(value.A() * scale));
+			static_cast<i32>(value.R() * scale),
+			static_cast<i32>(value.G() * scale),
+			static_cast<i32>(value.B() * scale),
+			static_cast<i32>(value.A() * scale));
 	}
 
 	Color operator *(double scale, Color value) {
 		return Color(
-			static_cast<long>(value.R() * scale),
-			static_cast<long>(value.G() * scale),
-			static_cast<long>(value.B() * scale),
-			static_cast<long>(value.A() * scale));
+			static_cast<i32>(value.R() * scale),
+			static_cast<i32>(value.G() * scale),
+			static_cast<i32>(value.B() * scale),
+			static_cast<i32>(value.A() * scale));
 	}
 
 	// Static
@@ -97,28 +94,28 @@ namespace Xna {
 
 		amount = MathHelper::Clamp(amount, 0L, 1L);
 		return Color(
-			static_cast<long>(MathHelper::Lerp(value1.R(), value2.R(), amount)),
-			static_cast<long>(MathHelper::Lerp(value1.G(), value2.G(), amount)),
-			static_cast<long>(MathHelper::Lerp(value1.B(), value2.B(), amount)),
-			static_cast<long>(MathHelper::Lerp(value1.A(), value2.A(), amount)));
+			static_cast<i32>(MathHelper::Lerp(value1.R(), value2.R(), amount)),
+			static_cast<i32>(MathHelper::Lerp(value1.G(), value2.G(), amount)),
+			static_cast<i32>(MathHelper::Lerp(value1.B(), value2.B(), amount)),
+			static_cast<i32>(MathHelper::Lerp(value1.A(), value2.A(), amount)));
 	}
 
 	Color Color::LerpPrecise(Color const& value1, Color const& value2, short amount) {
 
 		amount = MathHelper::Clamp(amount, 0, 1L);
 		return Color(
-			static_cast<long>(MathHelper::LerpPrecise(value1.R(), value2.R(), amount)),
-			static_cast<long>(MathHelper::LerpPrecise(value1.G(), value2.G(), amount)),
-			static_cast<long>(MathHelper::LerpPrecise(value1.B(), value2.B(), amount)),
-			static_cast<long>(MathHelper::LerpPrecise(value1.A(), value2.A(), amount)));
+			static_cast<i32>(MathHelper::LerpPrecise(value1.R(), value2.R(), amount)),
+			static_cast<i32>(MathHelper::LerpPrecise(value1.G(), value2.G(), amount)),
+			static_cast<i32>(MathHelper::LerpPrecise(value1.B(), value2.B(), amount)),
+			static_cast<i32>(MathHelper::LerpPrecise(value1.A(), value2.A(), amount)));
 	}
 
 	Color Color::Multiply(Color const& value, double const& scale) {
 		return Color(
-			static_cast<long>(value.R() * scale),
-			static_cast<long>(value.G() * scale),
-			static_cast<long>(value.B() * scale),
-			static_cast<long>(value.A() * scale));
+			static_cast<i32>(value.R() * scale),
+			static_cast<i32>(value.G() * scale),
+			static_cast<i32>(value.B() * scale),
+			static_cast<i32>(value.A() * scale));
 	}
 
 	Color Color::FromNonPremultiplied(Vector4 const& vector) {
@@ -129,7 +126,7 @@ namespace Xna {
 			vector.W);
 	}
 
-	Color Color::FromNonPremultiplied(long r, long g, long b, long a) {
+	Color Color::FromNonPremultiplied(i32 r, i32 g, i32 b, i32 a) {
 		return Color(
 			r * a / 255,
 			g * a / 255,
@@ -151,7 +148,7 @@ namespace Xna {
 	}
 
 	void Color::G(byte value) {
-		_packedValue = (_packedValue & 0xff00ffff) | (static_cast<unsigned long>(value) << 8);
+		_packedValue = (_packedValue & 0xff00ffff) | (static_cast<u32>(value) << 8);
 	}
 
 	byte Color::B() const {
@@ -159,7 +156,7 @@ namespace Xna {
 	}
 
 	void Color::B(byte value) {
-		_packedValue = (_packedValue & 0xff00ffff) | (static_cast<unsigned long>(value) << 16);
+		_packedValue = (_packedValue & 0xff00ffff) | (static_cast<u32>(value) << 16);
 	}
 
 	byte Color::A() const {
@@ -167,7 +164,7 @@ namespace Xna {
 	}
 
 	void Color::A(byte value) {
-		_packedValue = (_packedValue & 0xff00ffff) | (static_cast<unsigned long>(value) << 24);
+		_packedValue = (_packedValue & 0xff00ffff) | (static_cast<u32>(value) << 24);
 	}
 
 	Vector3  Color::ToVector3() const {
@@ -178,11 +175,11 @@ namespace Xna {
 		return Vector4(R() / 255.0, G() / 255.0, B() / 255.0, A() / 255.0f);
 	}
 
-	long Color::PackedValue() const {
+	i32 Color::PackedValue() const {
 		return _packedValue;
 	}
 
-	void Color::PackedValue(long value) {
+	void Color::PackedValue(i32 value) {
 		_packedValue = value;
 	}
 
@@ -218,12 +215,12 @@ namespace Xna {
 
 	// Private
 
-	void  Color::constructsColor(Color color, long alpha) {
+	void  Color::constructsColor(Color color, i32 alpha) {
 
-		long cA = MathHelper::Clamp(alpha, std::numeric_limits<byte>::min(),
+		i32 cA = MathHelper::Clamp(alpha, std::numeric_limits<byte>::min(),
 			std::numeric_limits<byte>::max());
 
-		unsigned long clampedA = static_cast<long>(cA);
+		u32 clampedA = static_cast<i32>(cA);
 
 		if ((alpha & 0xFFFFFF00) != 0) {
 
@@ -235,37 +232,37 @@ namespace Xna {
 		}
 	}
 
-	void Color::constructsRGB(long r, long g, long b) {
+	void Color::constructsRGB(i32 r, i32 g, i32 b) {
 		if (((r | g | b) & 0xFFFFFF00) != 0) {
-			long _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-			long _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-			long _cb = MathHelper::Clamp(b, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			i32 _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			i32 _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			i32 _cb = MathHelper::Clamp(b, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
 
-			unsigned long clampedR = static_cast<unsigned long>(_cr);
-			unsigned long clampedG = static_cast<unsigned long>(_cg);
-			unsigned long clampedB = static_cast<unsigned long>(_cb);
+			u32 clampedR = static_cast<u32>(_cr);
+			u32 clampedG = static_cast<u32>(_cg);
+			u32 clampedB = static_cast<u32>(_cb);
 
 			_packedValue |= (clampedB << 16) | (clampedG << 8) | (clampedR);
 		}
 		else
 		{
-			_packedValue = static_cast<unsigned long>(b << 16)
-				| static_cast<unsigned long>(g << 8)
-				| static_cast<unsigned long>(r);
+			_packedValue = static_cast<u32>(b << 16)
+				| static_cast<u32>(g << 8)
+				| static_cast<u32>(r);
 		}
 	}
 
-	void Color::constructsRGBA(long r, long g, long b, long alpha) {
+	void Color::constructsRGBA(i32 r, i32 g, i32 b, i32 alpha) {
 		if (((r | g | b | alpha) & 0xFFFFFF00) != 0) {
-			long _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-			long _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-			long _cb = MathHelper::Clamp(b, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
-			long _ca = MathHelper::Clamp(alpha, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			i32 _cr = MathHelper::Clamp(r, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			i32 _cg = MathHelper::Clamp(g, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			i32 _cb = MathHelper::Clamp(b, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
+			i32 _ca = MathHelper::Clamp(alpha, std::numeric_limits<byte>::min(), std::numeric_limits<byte>::max());
 
-			unsigned long clampedR = static_cast<unsigned long>(_cr);
-			unsigned long clampedG = static_cast<unsigned long>(_cg);
-			unsigned long clampedB = static_cast<unsigned long>(_cb);
-			unsigned long clampedA = static_cast<unsigned long>(_ca);
+			u32 clampedR = static_cast<u32>(_cr);
+			u32 clampedG = static_cast<u32>(_cg);
+			u32 clampedB = static_cast<u32>(_cb);
+			u32 clampedA = static_cast<u32>(_ca);
 
 			_packedValue = (clampedA << 24)
 				| (clampedB << 16)
@@ -274,10 +271,10 @@ namespace Xna {
 		}
 		else
 		{
-			_packedValue = static_cast<unsigned long>(alpha << 24)
-				| static_cast<unsigned long>(b << 16)
-				| static_cast<unsigned long>(g << 8)
-				| static_cast<unsigned long>(r);
+			_packedValue = static_cast<u32>(alpha << 24)
+				| static_cast<u32>(b << 16)
+				| static_cast<u32>(g << 8)
+				| static_cast<u32>(r);
 		}
 	}
 
@@ -421,7 +418,7 @@ namespace Xna {
 	const Color Color::Turquoise = Color(0xffd0e040);
 	const Color Color::Violet = Color(0xffee82ee);
 	const Color Color::Wheat = Color(0xffb3def5);
-	const Color Color::White = Color(std::numeric_limits<double>::max());
+	const Color Color::White = Color(std::numeric_limits<u32>::max());
 	const Color Color::WhiteSmoke = Color(0xfff5f5f5);
 	const Color Color::Yellow = Color(0xff00ffff);
 	const Color Color::YellowGreen = Color(0xff32cd9a);

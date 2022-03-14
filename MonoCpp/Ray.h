@@ -20,7 +20,6 @@ namespace Xna {
 		Ray();
 		Ray(Vector3 position, Vector3 direction);
 
-		friend std::ostream& operator<< (std::ostream& os, Ray const& o);
 		friend bool operator !=(Ray a, Ray b);
 		friend bool operator ==(Ray a, Ray b);
 

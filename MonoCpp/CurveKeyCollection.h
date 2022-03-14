@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "CurveKey.h"
+#include "CSharp.h"
 
 namespace Xna {
 	class CurveKeyCollection {
@@ -16,16 +17,16 @@ namespace Xna {
 		bool IsReadOnly() const;
 
 		//IEnumerator IEnumerable.GetEnumerator()		
-		CurveKey& Get(int index);
-		void Set(int index, CurveKey value);
+		CurveKey& Get(size_t index);
+		void Set(size_t index, CurveKey value);
 		void Add(CurveKey const& item);
 		void Clear();
 		CurveKeyCollection Clone() const;
 		bool Contains(CurveKey item);
-		void CopyTo(std::vector<CurveKey>& vec, int vecIndex) const;
+		void CopyTo(std::vector<CurveKey>& vec, i32 vecIndex) const;
 		//IEnumerator<CurveKey> GetEnumerator()
-		int IndexOf(CurveKey item);
-		void RemoveAt(int index);
+		i32 IndexOf(CurveKey item);
+		void RemoveAt(i32 index);
 		bool Remove(CurveKey item);
 
 		//std::vector<CurveKey>& GetList();

@@ -274,10 +274,10 @@ namespace Xna {
 		return result;
 	}
 
-	void  Vector3::Transform(std::vector<Vector3> const& sourceArray, int sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, int destinationIndex, int length) {
-		for (int i = 0; i < length; i++) {
-			Vector3 position = sourceArray[static_cast<std::vector<Xna::Vector3, std::allocator<Xna::Vector3>>::size_type>(sourceIndex) + i];
-			destinationArray[static_cast<std::vector<Xna::Vector3, std::allocator<Xna::Vector3>>::size_type>(destinationIndex) + i] =
+	void  Vector3::Transform(std::vector<Vector3> const& sourceArray, size_t sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, size_t destinationIndex, size_t length) {
+		for (size_t i = 0; i < length; i++) {
+			Vector3 position = sourceArray[sourceIndex + i];
+			destinationArray[destinationIndex + i] =
 				Vector3(
 					(position.X * matrix.M11) + (position.Y * matrix.M21) + (position.Z * matrix.M31) + matrix.M41,
 					(position.X * matrix.M12) + (position.Y * matrix.M22) + (position.Z * matrix.M32) + matrix.M42,
@@ -285,15 +285,15 @@ namespace Xna {
 		}
 	}
 
-	void  Vector3::Transform(std::vector<Vector3> const& sourceArray, int sourceIndex, Quaternion& rotation, std::vector<Vector3>& destinationArray, int destinationIndex, int length) {
-		for (int i = 0; i < length; i++) {
-			Vector3 position = sourceArray[static_cast<std::vector<Xna::Vector3, std::allocator<Xna::Vector3>>::size_type>(sourceIndex) + i];
+	void  Vector3::Transform(std::vector<Vector3> const& sourceArray, size_t sourceIndex, Quaternion& rotation, std::vector<Vector3>& destinationArray, size_t destinationIndex, size_t length) {
+		for (size_t i = 0; i < length; i++) {
+			Vector3 position = sourceArray[sourceIndex + i];
 
-			float x = 2 * (rotation.Y * position.Z - rotation.Z * position.Y);
-			float y = 2 * (rotation.Z * position.X - rotation.X * position.Z);
-			float z = 2 * (rotation.X * position.Y - rotation.Y * position.X);
+			double x = 2 * (rotation.Y * position.Z - rotation.Z * position.Y);
+			double y = 2 * (rotation.Z * position.X - rotation.X * position.Z);
+			double z = 2 * (rotation.X * position.Y - rotation.Y * position.X);
 
-			destinationArray[static_cast<std::vector<Xna::Vector3, std::allocator<Xna::Vector3>>::size_type>(destinationIndex) + i] =
+			destinationArray[destinationIndex + i] =
 				Vector3(
 					position.X + x * rotation.W + (rotation.Y * z - rotation.Z * y),
 					position.Y + y * rotation.W + (rotation.Z * x - rotation.X * z),
@@ -302,7 +302,7 @@ namespace Xna {
 	}
 
 	void  Vector3::Transform(std::vector<Vector3> const& sourceArray, Matrix& matrix, std::vector<Vector3>& destinationArray) {
-		for (int i = 0; i < sourceArray.size(); i++) {
+		for (i32 i = 0; i < sourceArray.size(); i++) {
 			Vector3 position = sourceArray[i];
 			destinationArray[i] =
 				Vector3(
@@ -313,12 +313,12 @@ namespace Xna {
 	}
 
 	void  Vector3::Transform(std::vector<Vector3> const& sourceArray, Quaternion& rotation, std::vector<Vector3>& destinationArray) {
-		for (int i = 0; i < sourceArray.size(); i++) {
+		for (i32 i = 0; i < sourceArray.size(); i++) {
 			Vector3 position = sourceArray[i];
 
-			float x = 2 * (rotation.Y * position.Z - rotation.Z * position.Y);
-			float y = 2 * (rotation.Z * position.X - rotation.X * position.Z);
-			float z = 2 * (rotation.X * position.Y - rotation.Y * position.X);
+			double x = 2 * (rotation.Y * position.Z - rotation.Z * position.Y);
+			double y = 2 * (rotation.Z * position.X - rotation.X * position.Z);
+			double z = 2 * (rotation.X * position.Y - rotation.Y * position.X);
 
 			destinationArray[i] =
 				Vector3(
@@ -336,12 +336,12 @@ namespace Xna {
 
 	}
 
-	void Vector3::TransformNormal(std::vector<Vector3> const& sourceArray, int sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, int destinationIndex, int length) {
-		for (int x = 0; x < length; x++)
+	void Vector3::TransformNormal(std::vector<Vector3> const& sourceArray, size_t sourceIndex, Matrix& matrix, std::vector<Vector3>& destinationArray, size_t destinationIndex, size_t length) {
+		for (size_t x = 0; x < length; x++)
 		{
-			Vector3 normal = sourceArray[static_cast<std::vector<Xna::Vector3, std::allocator<Xna::Vector3>>::size_type>(sourceIndex) + x];
+			Vector3 normal = sourceArray[sourceIndex + x];
 
-			destinationArray[static_cast<std::vector<Xna::Vector3, std::allocator<Xna::Vector3>>::size_type>(destinationIndex) + x] =
+			destinationArray[destinationIndex + x] =
 				Vector3(
 					(normal.X * matrix.M11) + (normal.Y * matrix.M21) + (normal.Z * matrix.M31),
 					(normal.X * matrix.M12) + (normal.Y * matrix.M22) + (normal.Z * matrix.M32),
@@ -350,7 +350,7 @@ namespace Xna {
 	}
 
 	void  Vector3::TransformNormal(std::vector<Vector3> const& sourceArray, Matrix& matrix, std::vector<Vector3>& destinationArray) {
-		for (int i = 0; i < sourceArray.size(); i++)
+		for (i32 i = 0; i < sourceArray.size(); i++)
 		{
 			Vector3 normal = sourceArray[i];
 

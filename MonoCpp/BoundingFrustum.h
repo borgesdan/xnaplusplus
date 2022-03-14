@@ -6,6 +6,7 @@
 #include "ContainmentType.h"
 #include "PlaneIntersectionType.h"
 #include "Vector3.h"
+#include "CSharp.h"
 
 namespace Xna {
 
@@ -19,16 +20,15 @@ namespace Xna {
 	struct BoundingFrustum {
 
 		// The number of planes in the frustum.
-		static constexpr long PlaneCount = 6;
+		static constexpr i32 PlaneCount = 6;
 		// The number of corner points in the frustum.
-		static constexpr long CornerCount = 8;
+		static constexpr i32 CornerCount = 8;
 
 		BoundingFrustum();
 
 		// Constructs the frustum by extracting the view planes from a matrix.
 		BoundingFrustum(Matrix value);
-
-		friend std::ostream& operator<< (std::ostream& os, BoundingFrustum const& bf);
+		
 		friend bool operator ==(BoundingFrustum a, BoundingFrustum b);
 		friend bool operator !=(BoundingFrustum a, BoundingFrustum b);
 

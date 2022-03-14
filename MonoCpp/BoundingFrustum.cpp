@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <iterator>
 #include <numeric>
-#include <stdexcept>
 
 #include "BoundingFrustum.h"
 #include "Plane.h"
@@ -20,17 +19,7 @@ namespace Xna {
 		CreateCorners();
 	};
 
-	// Operators
-
-	std::ostream& operator<< (std::ostream& os, BoundingFrustum const& bf) {
-		return os << "{Near: " << bf._planes[0] <<
-			" Far:" << bf._planes[1] <<
-			" Left:" << bf._planes[2] <<
-			" Right:" << bf._planes[3] <<
-			" Top:" << bf._planes[4] <<
-			" Bottom:" << bf._planes[5] <<
-			"}";
-	}
+	// Operators	
 
 	bool operator ==(BoundingFrustum a, BoundingFrustum b) {
 		return a.Equals(b);
@@ -78,25 +67,23 @@ namespace Xna {
 
 	ContainmentType BoundingFrustum::Contains(BoundingBox const& box) const {
 
-		ContainmentType result;
 		bool intersects = false;
 
-		for (long i = 0; i < PlaneCount; ++i)
+		for (i32 i = 0; i < PlaneCount; ++i)
 		{
 			PlaneIntersectionType planeIntersectionType = box.Intersects(_planes[i]);
 
 			switch (planeIntersectionType) {
 
 			case PlaneIntersectionType::Front:
-				result = ContainmentType::Disjoint;
-				return;
+				return ContainmentType::Disjoint;				
 			case PlaneIntersectionType::Intersecting:
 				intersects = true;
 				break;
 			}
 		}
-		result = intersects ? ContainmentType::Intersects : ContainmentType::Contains;
-		return result;
+
+		return intersects ? ContainmentType::Intersects : ContainmentType::Contains;
 	}
 
 	ContainmentType BoundingFrustum::Contains(BoundingFrustum const& frustum) const {
@@ -105,7 +92,7 @@ namespace Xna {
 			return ContainmentType::Contains;
 
 		bool intersects = false;
-		for (long i = 0; i < PlaneCount; ++i)
+		for (i32 i = 0; i < PlaneCount; ++i)
 		{
 			PlaneIntersectionType planeIntersectionType = frustum.Intersects(_planes[i]);
 			
@@ -124,42 +111,34 @@ namespace Xna {
 
 	ContainmentType BoundingFrustum::Contains(BoundingSphere const& sphere) const {
 
-		ContainmentType result;
-
 		bool intersects = false;
-		for (long i = 0; i < PlaneCount; ++i)
+		for (i32 i = 0; i < PlaneCount; ++i)
 		{
 			PlaneIntersectionType planeIntersectionType = sphere.Intersects(_planes[i]);
 		
 			switch (planeIntersectionType)
 			{
 			case PlaneIntersectionType::Front:
-				result = ContainmentType::Disjoint;
-				return;
+				return ContainmentType::Disjoint;
 			case PlaneIntersectionType::Intersecting:
 				intersects = true;
 				break;
 			}
-		}
-		result = intersects ? ContainmentType::Intersects : ContainmentType::Contains;
+		}		
 
-		return result;
+		return intersects ? ContainmentType::Intersects : ContainmentType::Contains;
 	}
 
 	ContainmentType BoundingFrustum::Contains(Vector3 const& point) const {
 
-		ContainmentType result;
-
-		for (long i = 0; i < PlaneCount; ++i)
+		for (i32 i = 0; i < PlaneCount; ++i)
 		{			
-			if (Plane::ClassifyPoint(point, _planes[i]) > 0)
-			{
-				result = ContainmentType::Disjoint;
-				return;
+			if (Plane::ClassifyPoint(point, _planes[i]) > 0) {
+				return ContainmentType::Disjoint;
 			}
 		}
 
-		result = ContainmentType::Contains;
+		return ContainmentType::Contains;
 	}
 
 	std::vector<Vector3> BoundingFrustum::GetCorners() const {
@@ -188,7 +167,7 @@ namespace Xna {
 
 		PlaneIntersectionType result = plane.Intersects(_corners[0]);
 
-		for (int i = 1; i < _corners.size(); i++) {
+		for (i32 i = 1; i < _corners.size(); i++) {
 			if (plane.Intersects(_corners[i]) != result) {
 				result = PlaneIntersectionType::Intersecting;
 			}
@@ -197,26 +176,26 @@ namespace Xna {
 		return result;
 	}
 
-	double BoundingFrustum::Intersects(Ray const& ray) const
-		throw(std::logic_error) {
+	double BoundingFrustum::Intersects(Ray const& ray) const {
 
-		double result;
-
+		constexpr double nan = std::numeric_limits<double>::quiet_NaN();
 		ContainmentType ctype = Contains(ray.Position);
 
 		switch (ctype)
 		{
 			case ContainmentType::Disjoint:
-				result = std::numeric_limits<double>::quiet_NaN();
-				return;
+				return nan;
 			case ContainmentType::Contains:
-				result = 0.0;
-				return;
+				return 0.0;
 			case ContainmentType::Intersects:
-				throw std::logic_error("NotImplementedException()");
+				//TODO: NotImplementedException
+				return nan;
 			default:
-				throw std::logic_error("ArgumentOutOfRangeException()");
+				//TODO: ArgumentOutOfRangeException;
+				return nan;
 		}
+
+		return nan;
 	}
 
 	bool BoundingFrustum::Equals(BoundingFrustum const& other) {		
@@ -239,7 +218,7 @@ namespace Xna {
 		Vector3 v1, v2, v3;
 		Vector3 cross =	Vector3::Cross(b.Normal, c.Normal);
 
-		float f = Vector3::Dot(a.Normal, cross);
+		double f = Vector3::Dot(a.Normal, cross);
 		f *= -1.0;
 
 		cross = Vector3::Cross(b.Normal, c.Normal);

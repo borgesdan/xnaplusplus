@@ -51,7 +51,7 @@ namespace Xna {
 
         CurveKey first = _keys.Get(0);
         CurveKey last = _keys.Get(_keys.Count() - 1);
-        long cycle = GetNumberOfCycle(position);
+        i32 cycle = GetNumberOfCycle(position);
         double virtualPos = 0.0;
 
         if (position < first.Position()) {
@@ -84,7 +84,7 @@ namespace Xna {
         }
         else if (position > last.Position())
         {
-            int cycle = 0;
+            i32 cycle = 0;
             switch (_postLoop)
             {
             case CurveLoopType::Constant:                
@@ -121,15 +121,15 @@ namespace Xna {
 
     void Curve::ComputeTangents(CurveTangent tangentInType, CurveTangent tangentOutType) {
         
-        for (int i = 0; i < _keys.Count(); ++i) {
+        for (i32 i = 0; i < _keys.Count(); ++i) {
             ComputeTangent(i, tangentInType, tangentOutType);
         }
     }
-    void Curve::ComputeTangent(int keyIndex, CurveTangent tangentType) {
+    void Curve::ComputeTangent(size_t keyIndex, CurveTangent tangentType) {
         ComputeTangent(keyIndex, tangentType, tangentType);
     }
 
-    void Curve::ComputeTangent(int keyIndex, CurveTangent tangentInType, CurveTangent tangentOutType) {
+    void Curve::ComputeTangent(size_t keyIndex, CurveTangent tangentInType, CurveTangent tangentOutType) {
         CurveKey &key = _keys.Get(keyIndex);
 
         double p0;
@@ -192,7 +192,7 @@ namespace Xna {
     // Private
         // Members
 
-    long Curve::GetNumberOfCycle(double position) {
+    i32 Curve::GetNumberOfCycle(double position) {
         double cycle = (position - _keys.Get(0).Position())
             / (_keys.Get(_keys.Count() - 1).Position() - _keys.Get(0).Position());
         
@@ -200,14 +200,14 @@ namespace Xna {
             cycle--;
         }
             
-        return cycle;
+        return static_cast<i32>(cycle);
     }
 
     double Curve::GetCurvePosition(double position) {
         CurveKey prev = _keys.Get(0);
         CurveKey next;
 
-        for (int i = 1; i < _keys.Count(); ++i) {
+        for (i32 i = 1; i < _keys.Count(); ++i) {
             next = _keys.Get(i);
 
             if (next.Position() >= position)

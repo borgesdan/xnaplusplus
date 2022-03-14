@@ -26,7 +26,6 @@ namespace Xna {
 		Plane(double a, double b, double c, double d);
 		Plane(Vector3 pointOnPlane, Vector3 normal);
 
-		friend std::ostream& operator<< (std::ostream& os, Plane const& pl);
 		friend bool operator!= (Plane plane1, Plane plane2);
 		friend bool operator== (Plane plane1, Plane plane2);
 

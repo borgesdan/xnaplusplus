@@ -41,10 +41,6 @@ namespace Xna {
 			);
 	}
 
-	std::ostream& operator<< (std::ostream& os, Plane const& pl) {
-		return os << "{Normal:" << pl.Normal << " D:" << pl.D << "}";
-	}
-
 	bool operator!= (Plane plane1, Plane plane2) {
 		return !plane1.Equals(plane2);
 	}

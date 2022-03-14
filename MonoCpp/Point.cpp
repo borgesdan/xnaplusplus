@@ -3,12 +3,8 @@
 
 namespace Xna {
 	
-	Point::Point(long x, long y): X(x), Y(y) {}
-	Point::Point(long value): X(value), Y(value) {}
-
-	std::ostream& operator<< (std::ostream& os, Point const& o) {
-		return os << "{X:" << o.X << " Y:" << o.Y << "}";
-	}
+	Point::Point(i32 x, i32 y): X(x), Y(y) {}
+	Point::Point(i32 value): X(value), Y(value) {}
 
 	Point operator+ (Point value1, Point value2) {
 		return Point(value1.X + value2.X, value1.Y + value2.Y);
