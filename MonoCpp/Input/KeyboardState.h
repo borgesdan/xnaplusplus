@@ -1,5 +1,5 @@
-#ifndef KEYBOARD_STATE_H
-#define KEYBOARD_STATE_H
+#ifndef KEYBOARDSTATE_H
+#define KEYBOARDSTATE_H
 
 #include <vector>
 #include "../CSharp.h"
