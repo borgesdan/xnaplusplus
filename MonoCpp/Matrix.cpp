@@ -32,7 +32,7 @@ namespace Xna {
 
 	//----- Operators
 
-	double& Matrix::operator[] (i32 index) {
+	double& Matrix::operator[] (size_t index) {
 
 		switch (index)
 		{
