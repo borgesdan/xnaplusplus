@@ -11,18 +11,12 @@ namespace Xna {
 
 	public:
 
-		GameTime();
-		GameTime(TimeSpan totalGameTime, TimeSpan elapsedGameTime);
-		GameTime(TimeSpan totalRealTime, TimeSpan elapsedRealTime, bool isRunningSlowly);
+		TimeSpan TotalGameTime;
+		TimeSpan ElapsedGameTime;
+		bool IsRunningSlowly;
 
-		TimeSpan TotalGameTime();
-		TimeSpan TotalGameTime(TimeSpan const& value);
-
-		TimeSpan ElapsedGameTime();
-		TimeSpan ElapsedGameTime(TimeSpan const& value);
-
-		bool IsRunningSlowly();
-		bool IsRunningSlowly(bool value);
+		GameTime();		
+		GameTime(TimeSpan totalRealTime, TimeSpan elapsedRealTime, bool isRunningSlowly);	
 	};
 
 }
