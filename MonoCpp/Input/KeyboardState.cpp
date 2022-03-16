@@ -2,9 +2,11 @@
 
 namespace Xna {
 
+	static const std::vector<Keys> empty;
+
 	KeyboardState::KeyboardState() {}
 
-	KeyboardState::KeyboardState(std::vector<Keys>& keys, bool capsLock = false, bool numLock = false) {
+	KeyboardState::KeyboardState(std::vector<Keys>& keys, bool capsLock, bool numLock) {
 		_modifiers = static_cast<byte>(0 | (capsLock ? CapsLockModifier : 0) | (numLock ? NumLockModifier : 0));
 
 		for (Keys const& k : keys) {
@@ -229,7 +231,7 @@ namespace Xna {
 			}				
 		}
 
-		return index;
+		return static_cast<i32>(index);
 	}
 
 	bool KeyboardState::InternalGetKey(Keys key) {

@@ -34,7 +34,6 @@ namespace Xna {
 	private:
 		static constexpr byte CapsLockModifier = 1;
 		static constexpr byte NumLockModifier = 2;
-		static std::vector<Keys> empty;
 
 		u32 _keys0{ 0 };
 		u32 _keys1{ 0 };
