@@ -24,15 +24,15 @@ namespace Xna {
 
 		Vector3 operator- () const;
 
-		friend Vector3 operator- (Vector3 const&, Vector3 const&);
-		friend Vector3 operator+ (Vector3 const&, Vector3 const&);
-		friend Vector3 operator* (Vector3 const&, Vector3 const&);
-		friend Vector3 operator* (Vector3 const&, double const&);
-		friend Vector3 operator* (double const&, Vector3 const&);
-		friend Vector3 operator/ (Vector3 const&, Vector3 const&);
-		friend Vector3 operator/ (Vector3 const&, double const& divider);
-		friend bool operator== (Vector3 const&, Vector3 const&);
-		friend bool operator!= (Vector3 const&, Vector3 const&);
+		friend Vector3 operator- (Vector3, Vector3);
+		friend Vector3 operator+ (Vector3, Vector3);
+		friend Vector3 operator* (Vector3, Vector3);
+		friend Vector3 operator* (Vector3, double);
+		friend Vector3 operator* (double, Vector3);
+		friend Vector3 operator/ (Vector3, Vector3);
+		friend Vector3 operator/ (Vector3, double);
+		friend bool operator== (Vector3, Vector3);
+		friend bool operator!= (Vector3, Vector3);
 
 		// Returns a <see cref="Vector4"/> with components 0, 0, 0, 0.
 		static Vector3 Zero();
@@ -89,7 +89,7 @@ namespace Xna {
 		double LengthSquared() const;
 		void Floor();
 		void Deconstruct(double& x, double& y, double& z) const;
-		bool Equals(Vector3 other) const;
+		bool Equals(Vector3 const& other) const;
 	};
 }
 #endif

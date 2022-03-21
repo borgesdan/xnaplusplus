@@ -20,8 +20,7 @@ namespace Xna {
 		Vector2(double x, double y);
 		Vector2(double value);
 
-		Vector2 operator- ();
-		
+		Vector2 operator- ();		
 		friend Vector2 operator+ (Vector2, Vector2);
 		friend Vector2 operator- (Vector2, Vector2);
 		friend Vector2 operator* (Vector2, Vector2);

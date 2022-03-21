@@ -203,13 +203,6 @@ build MonoCpp\CMakeFiles\MonoGame.dir\Curve.cpp.obj: CXX_COMPILER__MonoGame_Debu
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
   TARGET_PDB = MonoCpp\MonoGame.pdb
 
-build MonoCpp\CMakeFiles\MonoGame.dir\TimeSpan.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\TimeSpan.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
 build MonoCpp\CMakeFiles\MonoGame.dir\Input\KeyboardState.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Input\KeyboardState.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
@@ -224,6 +217,27 @@ build MonoCpp\CMakeFiles\MonoGame.dir\Input\MouseState.cpp.obj: CXX_COMPILER__Mo
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
   TARGET_PDB = MonoCpp\MonoGame.pdb
 
+build MonoCpp\CMakeFiles\MonoGame.dir\CSharp.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\CSharp.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGamePlatform.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Platform\SdlGamePlatform.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir\Platform
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGameWindow.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Platform\SdlGameWindow.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir\Platform
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MonoGame
@@ -232,7 +246,7 @@ build MonoCpp\CMakeFiles\MonoGame.dir\Input\MouseState.cpp.obj: CXX_COMPILER__Mo
 #############################################
 # Link the executable MonoCpp\MonoGame.exe
 
-build MonoCpp\MonoGame.exe: CXX_EXECUTABLE_LINKER__MonoGame_Debug MonoCpp\CMakeFiles\MonoGame.dir\Main.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Rectangle.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Point.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector2.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Matrix.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Quaternion.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\MathHelper.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector4.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector3.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Plane.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingBox.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingFrustum.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingSphere.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Ray.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Color.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CurveKey.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CurveKeyCollection.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Curve.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\TimeSpan.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Input\KeyboardState.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Input\MouseState.cpp.obj
+build MonoCpp\MonoGame.exe: CXX_EXECUTABLE_LINKER__MonoGame_Debug MonoCpp\CMakeFiles\MonoGame.dir\Main.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Rectangle.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Point.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector2.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Matrix.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Quaternion.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\MathHelper.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector4.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector3.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Plane.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingBox.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingFrustum.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingSphere.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Ray.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Color.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CurveKey.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CurveKeyCollection.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Curve.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Input\KeyboardState.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Input\MouseState.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CSharp.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGamePlatform.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGameWindow.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

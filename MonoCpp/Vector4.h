@@ -36,14 +36,15 @@ namespace Xna {
 		Vector4(double value);
 
 		Vector4 operator- () const;
-		friend Vector4 operator- (Vector4 const& value1, Vector4 const& value2);
-		friend Vector4 operator+ (Vector4 const& value1, Vector4 const& value2);
-		friend Vector4 operator* (Vector4 const& value1, Vector4 const& value2);
-		friend Vector4 operator* (Vector4 const& value1, double scaleFactor);
-		friend Vector4 operator/ (Vector4 const& value1, Vector4 const& value2);
-		friend Vector4 operator/ (Vector4 const& value1, i32 divider);
-		friend bool operator== (Vector4 const& value1, Vector4 const& value2);
-		friend bool operator!= (Vector4 const& value1, Vector4 const& value2);
+		friend Vector4 operator- (Vector4, Vector4);
+		friend Vector4 operator+ (Vector4, Vector4);
+		friend Vector4 operator* (Vector4, Vector4);
+		friend Vector4 operator* (Vector4, double);
+		friend Vector4 operator* (double, Vector4);
+		friend Vector4 operator/ (Vector4, Vector4);
+		friend Vector4 operator/ (Vector4, i32);
+		friend bool operator== (Vector4, Vector4);
+		friend bool operator!= (Vector4, Vector4);
 
 		// Returns a Vector4 with components 0, 0, 0, 0.
 		static Vector4 Zero();
@@ -111,9 +112,9 @@ namespace Xna {
 		// Creates a new Vector4 that contains a transformation of 4d-vector by the specified Matrix.
 		static Vector4 Transform(Vector4 const& value, Matrix const& matrix);
 		// Apply transformation on vectors within array of Vector4 by the specified Matrix and places the results in an another array.
-		static void Transform(std::vector<Vector4> const& sourceArray, i32 sourceIndex,	Matrix& matrix, std::vector<Vector4>& destinationArray, i32 destinationIndex, i32 length);
+		static void Transform(std::vector<Vector4> const& sourceArray, i32 sourceIndex, Matrix& matrix, std::vector<Vector4>& destinationArray, i32 destinationIndex, i32 length);
 		// Apply transformation on all vectors within array of Vector4 by the specified Matrix and places the results in an another array.
-		static void Transform(std::vector<Vector4> const& sourceArray, Matrix& matrix, std::vector<Vector4>& destinationArray);		
+		static void Transform(std::vector<Vector4> const& sourceArray, Matrix& matrix, std::vector<Vector4>& destinationArray);
 
 		// Round the members of this Vector4 towards positive infinity.
 		void Ceiling();
@@ -131,13 +132,13 @@ namespace Xna {
 		// Compares whether current instance is equal to specified Vector4.
 		bool Equals(Vector4 const& other) const;
 
-		
-		
+
+
 		//----- C# code not implemented
 		// static Vector4 Transform(Vector2 const& value, Quaternion const& rotation);
 		// static Vector4 Transform(Vector3 const& value, Quaternion const& rotation);
 		// static Vector4 Transform(Vector4 const& value, Quaternion const& rotation);
-		
+
 		// This methods call Transform(Vector4, Quaternion) in its implementation
 		// static void Transform(std::vector<Vector4> const& sourceArray, i32 sourceIndex, Quaternion& rotation, std::vector<Vector4>& destinationArray, i32 destinationIndex, i32 length);
 		// static void Transform(std::vector<Vector4> const& sourceArray, Quaternion& matrix, std::vector<Vector4>& destinationArray);	

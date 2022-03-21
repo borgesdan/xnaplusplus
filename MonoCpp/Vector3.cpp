@@ -21,45 +21,41 @@ namespace Xna {
 		return Vector3(-X, -Y, -Z);
 	}
 
-	//----- Operators
+	//----- Operators	
 
-	std::ostream& operator<< (std::ostream& os, Vector3 const& vec) {
-		return os << "{X:" << vec.X << " Y:" << vec.Y << " Z:" << vec.Z << "}";
-	}
-
-	Vector3 operator- (Vector3 const& value1, Vector3 const& value2) {
+	Vector3 operator- (Vector3 value1, Vector3 value2) {
 		return Vector3::Subtract(value1, value2);
 	}
 
-	Vector3 operator+ (Vector3 const& value1, Vector3 const& value2) {
+	Vector3 operator+ (Vector3 value1, Vector3 value2) {
 		return Vector3::Add(value1, value2);
 	}
 
-	Vector3 operator* (Vector3 const& value1, Vector3 const& value2) {
+	Vector3 operator* (Vector3 value1, Vector3 value2) {
 		return Vector3::Multiply(value1, value2);
 	}
 
-	Vector3 operator* (double const& scaleFactor, Vector3 const& value) {
+	Vector3 operator* (double scaleFactor, Vector3 value) {
 		return Vector3::Subtract(value, scaleFactor);
 	}
 
-	Vector3 operator* (Vector3 const& value, double const& scaleFactor) {
+	Vector3 operator* (Vector3 value, double scaleFactor) {
 		return Vector3::Subtract(value, scaleFactor);
 	}
 
-	Vector3 operator/ (Vector3 const& value1, Vector3 const& value2) {
+	Vector3 operator/ (Vector3 value1, Vector3 value2) {
 		return Vector3::Divide(value1, value2);
 	}
 
-	Vector3 operator/ (Vector3 const& value, double const& divider) {
+	Vector3 operator/ (Vector3 value, double divider) {
 		return Vector3::Divide(value, divider);
 	}
 
-	bool operator== (Vector3 const& value1, Vector3 const& value2) {
+	bool operator== (Vector3 value1, Vector3 value2) {
 		return value1.Equals(value2);
 	}
 
-	bool operator!= (Vector3 const& value1, Vector3 const& value2) {
+	bool operator!= (Vector3 value1, Vector3 value2) {
 		return !value1.Equals(value2);
 	}
 
@@ -405,7 +401,7 @@ namespace Xna {
 		z = Z;
 	}
 
-	bool Vector3::Equals(Vector3 other) const {
+	bool Vector3::Equals(Vector3 const& other) const {
 		return X == other.X
 			&& Y == other.Y
 			&& Z == other.Z;

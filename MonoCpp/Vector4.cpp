@@ -22,35 +22,39 @@ namespace Xna {
 		return Vector4::Negate((*this));
 	}
 
-	Vector4 operator- (Vector4 const& value1, Vector4 const& value2) {
+	Vector4 operator- (Vector4 value1, Vector4 value2) {
 		return Vector4::Subtract(value1, value2);
 	}
 
-	Vector4 operator+ (Vector4 const& value1, Vector4 const& value2) {
+	Vector4 operator+ (Vector4 value1, Vector4 value2) {
 		return Vector4::Add(value1, value2);
 	}
 
-	Vector4 operator* (Vector4 const& value1, Vector4 const& value2) {
+	Vector4 operator* (Vector4 value1, Vector4 value2) {
 		return Vector4::Multiply(value1, value2);
 	}
 
-	Vector4 operator* (Vector4 const& value1, double scaleFactor) {
-		return Vector4::Multiply(value1, scaleFactor);
+	Vector4 operator* (Vector4 value, double scaleFactor) {
+		return Vector4::Multiply(value, scaleFactor);
 	}
 
-	Vector4 operator/ (Vector4 const& value1, Vector4 const& value2) {
+	Vector4 operator* (double scaleFactor, Vector4 value) {
+		return Vector4::Multiply(value, scaleFactor);
+	}
+
+	Vector4 operator/ (Vector4 value1, Vector4 value2) {
 		return Vector4::Divide(value1, value2);
 	}
 
-	Vector4 operator/ (Vector4 const& value1, i32 divider) {
+	Vector4 operator/ (Vector4 value1, i32 divider) {
 		return Vector4::Divide(value1, divider);
 	}
 
-	bool operator== (Vector4 const& value1, Vector4 const& value2) {
+	bool operator== (Vector4 value1, Vector4 value2) {
 		return value1.Equals(value2);
 	}
 
-	bool operator!= (Vector4 const& value1, Vector4 const& value2) {
+	bool operator!= (Vector4 value1, Vector4 value2) {
 		return !value1.Equals(value2);
 	}
 

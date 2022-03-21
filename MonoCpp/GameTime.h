@@ -1,7 +1,7 @@
 #ifndef GAMETIME_H
 #define GAMETIME_H
 
-#include "TimeSpan.h"
+#include "CSharp.h"
 
 namespace Xna {
 
