@@ -1,12 +1,6 @@
-#include <stdexcept>
 #include <cmath>
 #include <numeric>
-
-#include "BoundingBox.h"
-#include "BoundingFrustum.h"
-#include "BoundingSphere.h"
-#include "Plane.h"
-#include "Ray.h"
+#include "Space3d.h"
 
 namespace Xna {
 

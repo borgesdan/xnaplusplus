@@ -1,9 +1,6 @@
-#include "Plane.h"
-#include "Matrix.h"
-#include "Quaternion.h"
-#include "BoundingBox.h"
-#include "BoundingFrustum.h"
-#include "BoundingSphere.h"
+#include <cmath>
+#include "Space3d.h"
+#include "MathHelper.h"
 
 namespace Xna {
 

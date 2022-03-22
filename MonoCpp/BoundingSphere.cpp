@@ -1,11 +1,7 @@
 #include <numeric>
 #include <cmath>
 
-#include "BoundingBox.h"
-#include "BoundingFrustum.h"
-#include "BoundingSphere.h"
-#include "Plane.h"
-#include "Ray.h"
+#include "Space3d.h"
 
 namespace Xna {
 
@@ -60,7 +56,8 @@ namespace Xna {
         }
 
         if (numPoints == 0) {
-            throw std::invalid_argument("You should have at least one point in points.");
+            //throw std::invalid_argument("You should have at least one point in points.");
+            return BoundingSphere();
         }            
 
         double sqDistX = Vector3::DistanceSquared(maxx, minx);

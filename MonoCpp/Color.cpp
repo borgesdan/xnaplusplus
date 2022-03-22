@@ -1,7 +1,6 @@
 #include <limits>
+#include "Structs.h"
 #include "Color.h"
-#include "Vector3.h"
-#include "Vector4.h"
 #include "MathHelper.h"
 
 namespace Xna {

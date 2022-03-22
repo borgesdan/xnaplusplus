@@ -1,5 +1,5 @@
 #include <cmath>
-#include "CurveKey.h"
+#include "Curve.h"
 
 namespace Xna {
 	CurveKey::CurveKey():

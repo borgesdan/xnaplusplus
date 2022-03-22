@@ -77,78 +77,9 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 build cmake_object_order_depends_target_MonoGame: phony || MonoCpp\CMakeFiles\MonoGame.dir
 
-build MonoCpp\CMakeFiles\MonoGame.dir\Main.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Main.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\Rectangle.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Rectangle.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\Point.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Point.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\Vector2.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Vector2.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\Matrix.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Matrix.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\Quaternion.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Quaternion.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\MathHelper.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\MathHelper.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\Vector4.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Vector4.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\Vector3.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Vector3.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\Plane.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Plane.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
 build MonoCpp\CMakeFiles\MonoGame.dir\BoundingBox.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\BoundingBox.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
@@ -156,6 +87,7 @@ build MonoCpp\CMakeFiles\MonoGame.dir\BoundingBox.cpp.obj: CXX_COMPILER__MonoGam
 
 build MonoCpp\CMakeFiles\MonoGame.dir\BoundingFrustum.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\BoundingFrustum.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
@@ -163,13 +95,7 @@ build MonoCpp\CMakeFiles\MonoGame.dir\BoundingFrustum.cpp.obj: CXX_COMPILER__Mon
 
 build MonoCpp\CMakeFiles\MonoGame.dir\BoundingSphere.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\BoundingSphere.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\Ray.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Ray.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
@@ -177,20 +103,15 @@ build MonoCpp\CMakeFiles\MonoGame.dir\Ray.cpp.obj: CXX_COMPILER__MonoGame_Debug 
 
 build MonoCpp\CMakeFiles\MonoGame.dir\Color.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Color.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
   TARGET_PDB = MonoCpp\MonoGame.pdb
 
-build MonoCpp\CMakeFiles\MonoGame.dir\CurveKey.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\CurveKey.cpp || cmake_object_order_depends_target_MonoGame
+build MonoCpp\CMakeFiles\MonoGame.dir\CSharp.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\CSharp.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
-build MonoCpp\CMakeFiles\MonoGame.dir\CurveKeyCollection.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\CurveKeyCollection.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
@@ -198,6 +119,119 @@ build MonoCpp\CMakeFiles\MonoGame.dir\CurveKeyCollection.cpp.obj: CXX_COMPILER__
 
 build MonoCpp\CMakeFiles\MonoGame.dir\Curve.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Curve.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\CurveKey.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\CurveKey.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\CurveKeyCollection.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\CurveKeyCollection.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\GameTime.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\GameTime.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Main.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Main.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\MathHelper.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\MathHelper.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Matrix.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Matrix.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Plane.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Plane.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Point.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Point.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Quaternion.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Quaternion.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Ray.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Ray.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Rectangle.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Rectangle.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Vector2.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Vector2.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Vector3.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Vector3.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Vector4.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Vector4.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
@@ -205,6 +239,7 @@ build MonoCpp\CMakeFiles\MonoGame.dir\Curve.cpp.obj: CXX_COMPILER__MonoGame_Debu
 
 build MonoCpp\CMakeFiles\MonoGame.dir\Input\KeyboardState.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Input\KeyboardState.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir\Input
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
@@ -212,20 +247,15 @@ build MonoCpp\CMakeFiles\MonoGame.dir\Input\KeyboardState.cpp.obj: CXX_COMPILER_
 
 build MonoCpp\CMakeFiles\MonoGame.dir\Input\MouseState.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Input\MouseState.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir\Input
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
   TARGET_PDB = MonoCpp\MonoGame.pdb
 
-build MonoCpp\CMakeFiles\MonoGame.dir\CSharp.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\CSharp.cpp || cmake_object_order_depends_target_MonoGame
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir
-  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
-  TARGET_PDB = MonoCpp\MonoGame.pdb
-
 build MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGamePlatform.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Platform\SdlGamePlatform.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir\Platform
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
@@ -233,8 +263,17 @@ build MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGamePlatform.cpp.obj: CXX_COMP
 
 build MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGameWindow.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Platform\SdlGameWindow.cpp || cmake_object_order_depends_target_MonoGame
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir\Platform
+  TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
+  TARGET_PDB = MonoCpp\MonoGame.pdb
+
+build MonoCpp\CMakeFiles\MonoGame.dir\Graphics\GraphicsDevice.cpp.obj: CXX_COMPILER__MonoGame_Debug D$:\VsProjects\C++\MonoCpp\MonoCpp\Graphics\GraphicsDevice.cpp || cmake_object_order_depends_target_MonoGame
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -ID:\PROGRAMACAO\SDL2\include
+  OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
+  OBJECT_FILE_DIR = MonoCpp\CMakeFiles\MonoGame.dir\Graphics
   TARGET_COMPILE_PDB = MonoCpp\CMakeFiles\MonoGame.dir\
   TARGET_PDB = MonoCpp\MonoGame.pdb
 
@@ -246,10 +285,10 @@ build MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGameWindow.cpp.obj: CXX_COMPIL
 #############################################
 # Link the executable MonoCpp\MonoGame.exe
 
-build MonoCpp\MonoGame.exe: CXX_EXECUTABLE_LINKER__MonoGame_Debug MonoCpp\CMakeFiles\MonoGame.dir\Main.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Rectangle.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Point.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector2.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Matrix.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Quaternion.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\MathHelper.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector4.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector3.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Plane.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingBox.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingFrustum.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingSphere.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Ray.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Color.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CurveKey.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CurveKeyCollection.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Curve.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Input\KeyboardState.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Input\MouseState.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CSharp.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGamePlatform.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGameWindow.cpp.obj
+build MonoCpp\MonoGame.exe: CXX_EXECUTABLE_LINKER__MonoGame_Debug MonoCpp\CMakeFiles\MonoGame.dir\BoundingBox.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingFrustum.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\BoundingSphere.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Color.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CSharp.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Curve.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CurveKey.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\CurveKeyCollection.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\GameTime.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Main.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\MathHelper.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Matrix.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Plane.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Point.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Quaternion.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Ray.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Rectangle.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector2.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector3.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Vector4.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Input\KeyboardState.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Input\MouseState.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGamePlatform.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Platform\SdlGameWindow.cpp.obj MonoCpp\CMakeFiles\MonoGame.dir\Graphics\GraphicsDevice.cpp.obj | D$:\PROGRAMACAO\SDL2\lib\x64\SDL2.lib D$:\PROGRAMACAO\SDL2\lib\x64\SDL2main.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = D:\PROGRAMACAO\SDL2\lib\x64\SDL2.lib  D:\PROGRAMACAO\SDL2\lib\x64\SDL2main.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = MonoCpp\CMakeFiles\MonoGame.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -312,14 +351,14 @@ build MonoCpp\all: phony MonoCpp\MonoGame.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ..\..\..\CMakeLists.txt ..\..\..\MonoCpp\CMakeLists.txt C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.22.22022201-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ..\..\..\CMakeLists.txt ..\..\..\MonoCpp\CMakeLists.txt C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.22.22022201-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeSystem.cmake D$:\PROGRAMACAO\SDL2\sdl2-config.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ..\..\..\CMakeLists.txt ..\..\..\MonoCpp\CMakeLists.txt C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.22.22022201-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeSystem.cmake: phony
+build ..\..\..\CMakeLists.txt ..\..\..\MonoCpp\CMakeLists.txt C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.22.22022201-MSVC_2\CMakeCCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeCXXCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeRCCompiler.cmake CMakeFiles\3.22.22022201-MSVC_2\CMakeSystem.cmake D$:\PROGRAMACAO\SDL2\sdl2-config.cmake: phony
 
 
 #############################################

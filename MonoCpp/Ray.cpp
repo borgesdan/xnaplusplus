@@ -1,8 +1,5 @@
 #include <limits>
-#include "Ray.h"
-#include "Plane.h"
-#include "BoundingBox.h"
-#include "BoundingSphere.h"
+#include "Space3d.h"
 #include "MathHelper.h"
 
 namespace Xna {

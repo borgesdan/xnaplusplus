@@ -1,10 +1,6 @@
 #include <cmath>
-#include "Vector2.h"
-#include "Point.h"
-#include "Matrix.h"
-#include "Quaternion.h"
+#include "Structs.h"
 #include "MathHelper.h"
-#include "Vector3.h"
 
 namespace Xna {
 	Vector2::Vector2() : X(0), Y(0) {}

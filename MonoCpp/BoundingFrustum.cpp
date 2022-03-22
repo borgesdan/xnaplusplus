@@ -2,11 +2,7 @@
 #include <iterator>
 #include <numeric>
 
-#include "BoundingFrustum.h"
-#include "Plane.h"
-#include "BoundingBox.h"
-#include "BoundingSphere.h"
-#include "Ray.h"
+#include "Space3d.h"
 
 namespace Xna {
 

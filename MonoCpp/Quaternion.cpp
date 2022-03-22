@@ -1,8 +1,5 @@
-#include "Quaternion.h"
-#include "Vector3.h"
-#include "Vector4.h"
+#include "Structs.h"
 #include "MathHelper.h"
-#include "Matrix.h"
 
 namespace Xna {
 	Quaternion::Quaternion() :
@@ -16,10 +13,6 @@ namespace Xna {
 
 	Quaternion::Quaternion(Vector4 value) :
 		X(value.X), Y(value.Y), Z(value.Z), W(value.W) {}
-
-	std::ostream& operator<< (std::ostream& os, Quaternion const& o) {
-		return os << "{X:" << o.X << " Y:" << o.Y << " Z:" << o.Z << " W:" << o.W << "}";
-	}
 
 	Quaternion Quaternion::operator -(Quaternion quaternion) {
 		return Quaternion::Negate(quaternion);

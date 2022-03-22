@@ -1,4 +1,4 @@
-#include "CurveKeyCollection.h"
+#include "Curve.h"
 
 namespace Xna {
 	CurveKeyCollection::CurveKeyCollection(){}

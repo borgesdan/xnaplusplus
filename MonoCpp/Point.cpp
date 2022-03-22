@@ -1,5 +1,4 @@
-#include "Point.h"
-#include "Vector2.h"
+#include "Structs.h"
 
 namespace Xna {
 	

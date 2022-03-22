@@ -1,13 +1,7 @@
 #include <cmath>
-
-#include "Matrix.h"
-#include "Vector3.h"
-#include "Vector4.h"
-#include "Point.h"
-#include "Quaternion.h"
+#include "Structs.h"
 #include "MathHelper.h"
-#include "Rectangle.h"
-#include "Plane.h"
+#include "Space3d.h"
 
 namespace Xna {
 

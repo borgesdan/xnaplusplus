@@ -127,6 +127,10 @@
 		},
 		{
 			"path" : "MonoCpp/CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/PROGRAMACAO/SDL2/sdl2-config.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
